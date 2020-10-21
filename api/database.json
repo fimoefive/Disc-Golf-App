@@ -1,0 +1,115 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "username": "Matt",
+      "email": "matt@email.com"
+    },
+    {
+      "id": 2,
+      "username": "Martin",
+      "email": "martin@email.com"
+    },
+    {
+      "id": 3,
+      "username": "Braxton",
+      "email": "braxton@email.com"
+    },
+    {
+      "id": 4,
+      "username": "Zach",
+      "email": "zach@email.com"
+    },
+    {
+      "username": "Jerry",
+      "email": "Jerry@email.com",
+      "id": 5
+    },
+    {
+      "username": "Jasmin",
+      "email": "jasmin@emil.com",
+      "id": 6
+    },
+    {
+      "email": "martin@me.com",
+      "username": "Martin",
+      "id": 7
+    }
+  ],
+  "scores": [
+    {
+      "id": 2,
+      "gameId": 7,
+      "roundNum": "Walking at the park",
+      "par": "0800",
+      "score": "Park",
+    },
+      {
+      "id": 2,
+      "gameId": 7,
+      "roundNum": "Walking at the park",
+      "par": "0800",
+      "score": "Park",
+    }
+  ],
+  "games": [
+    {
+      "userId": 1,
+      "title": "Game 1",
+      "course": "Shelby Bottoms",
+      "date": "8/10/2020",
+      "score": "184",
+      "id": 1
+    },
+       {
+      "userId": 1,
+      "title": "Game 2",
+      "course": "Seven Oaks",
+      "date": "8/19/2020",
+      "score": "91",
+      "id": 1
+    },
+    {
+      "userId": 1,
+      "title": "Game 3",
+      "course": "Cedar Hill",
+      "date": "9/7/2020",
+      "score": "100",
+      "id": 1
+    }
+  ],
+  "followers": [
+    {
+      "id": 1,
+      "userId": 4,
+      "activeUserId": 7
+    },
+    {
+      "id": 2,
+      "userId": 1,
+      "activeUserId": 3
+    },
+    {
+      "id": 3,
+      "userId": 2,
+      "activeUserId": 3
+    }
+  ],
+  "messages": [
+    {
+      "id": 1,
+      "userId": 2,
+      "message": "Hello!"
+    },
+    {
+      "id": 2,
+      "userId": 3,
+      "message": "Hi!"
+    },
+    {
+      "userId": 2,
+      "message": "HI",
+      "id": 3
+    }
+  ]
+}
