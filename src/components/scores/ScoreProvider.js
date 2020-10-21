@@ -7,13 +7,13 @@ export const ScoreProvider = (props) => {
     const [searchTerms, setSearchTerms] = useState([]);
 
     const getScores = () => {
-        return fetch('http://localhost:8088/events?_expand=user&_sort=id&_order=DESC')
+        return fetch('http://localhost:8088/scores?_expand=user&_sort=id&_order=DESC')
             .then(res => res.json())
             .then(setScores)
     };
 
     const addScore = (event) => {
-        return fetch('http://localhost:8088/events', {
+        return fetch('http://localhost:8088/scores', {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
@@ -24,18 +24,18 @@ export const ScoreProvider = (props) => {
     };
 
     const getScoreById = (id) => {
-        return fetch(`http://localhost:8088/events/${id}?_expand=user`)
+        return fetch(`http://localhost:8088/scores/${id}?_expand=user`)
             .then(response => response.json())
     };
 
-    const deleteScore = eventId => {
-        return fetch(`http://localhost:8088/events/${eventId}`, {
+    const deleteScore = scoreId => {
+        return fetch(`http://localhost:8088/scores/${eventId}`, {
             method: "DELETE"
         })
     };
 
     const editScore = event => {
-        return fetch(`http://localhost:8088/events/${event.id}`, {
+        return fetch(`http://localhost:8088/scores/${score.id}`, {
             method: "PUT",
             headers: {
                 "Content-Type": "application/json"
