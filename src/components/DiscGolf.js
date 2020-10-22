@@ -3,14 +3,14 @@ import { Route, Redirect } from "react-router-dom";
 import { ApplicationViews } from "./ApplicationView";
 import { Login } from "./Auth/Login";
 import { Register } from "./Auth/Register";
-import { NavBar } from "./Navbar/Navbar";
+import { NavBar } from "./NavBar/NavBar";
 import "./DiscGolf.css";
 
 export const DiscApp = () => (
     <>
         <Route
             render={() => {
-                if (localStorage.getItem("nutshell_customer")) {
+                if (localStorage.getItem("disc-app_user")) {
                     return (
                         <>
                             <NavBar />

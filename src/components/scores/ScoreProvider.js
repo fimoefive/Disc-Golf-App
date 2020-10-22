@@ -29,18 +29,18 @@ export const ScoreProvider = (props) => {
     };
 
     const deleteScore = scoreId => {
-        return fetch(`http://localhost:8088/scores/${eventId}`, {
+        return fetch(`http://localhost:8088/scores/${scoreId}`, {
             method: "DELETE"
         })
     };
 
-    const editScore = event => {
+    const editScore = score => {
         return fetch(`http://localhost:8088/scores/${score.id}`, {
             method: "PUT",
             headers: {
                 "Content-Type": "application/json"
             },
-            body: JSON.stringify(event)
+            body: JSON.stringify(score)
         })
             .then(getScores)
     };

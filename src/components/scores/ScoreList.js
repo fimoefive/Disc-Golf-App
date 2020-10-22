@@ -1,41 +1,41 @@
 import React, { useContext, useEffect, useState } from "react";
 import { useHistory } from "react-router-dom";
 import { EventContext } from "./ScoreProvider";
-import { EventCard } from "./ScoreCard";
+import { ScoreCard } from "./ScoreCard";
 import "./Score.css";
 
-export const EventList = () => {
+export const ScoreList = () => {
     // This state changes when `getEvent()` is invoked below
-    const { events, getEvents, searchTerms } = useContext(EventContext)
-    const [filteredEvents, setFilteredEvents] = useState([])
+    const { scores, getScores, searchTerms } = useContext(EventContext)
+    const [filteredScores, setFilteredScores] = useState([])
 
     //useEffect - reach out to the world for something
     useEffect(() => {
-        getEvents()
+        getScores()
     }, [])
 
     const history = useHistory();
 
     useEffect(() => {
         if (searchTerms !== "") {
-            const subset = events.filter(event => event.name.includes(searchTerms.trim()))
-            console.log(events)
-            setFilteredEvents(subset)
+            const subset = scores.filter(score => score.name.includes(searchTerms.trim()))
+            console.log(scores)
+            setFilteredScores(subset)
         } else {
-            setFilteredEvents(events)
+            setFilteredScores(scores)
         }
-    }, [searchTerms, events])
+    }, [searchTerms, scores])
 
     return (
         <>
-            <h2>Events</h2>
-            <button onClick={() => { history.push("/events/create") }}>
-                Create Event
+            <h2>Scores</h2>
+            <button onClick={() => { history.push("/scores/create") }}>
+                Create Score
             </button>
-            <div className="event">
+            <div className="score">
                 {
-                    filteredEvents.map(event => {
-                        return <EventCard key={event.id} events={event} />
+                    filteredScores.map(score => {
+                        return <ScoreCard key={score.id} scores={score} />
                     })
                 }
             </div>

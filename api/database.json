@@ -37,20 +37,7 @@
     }
   ],
   "scores": [
-    {
-      "id": 2,
-      "gameId": 7,
-      "roundNum": "Walking at the park",
-      "par": "0800",
-      "score": "Park",
-    },
-      {
-      "id": 2,
-      "gameId": 7,
-      "roundNum": "Walking at the park",
-      "par": "0800",
-      "score": "Park",
-    }
+ 
   ],
   "games": [
     {

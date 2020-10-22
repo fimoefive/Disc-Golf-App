@@ -22,7 +22,7 @@ export const Login = props => {
         existingUserCheck()
             .then(exists => {
                 if (exists) {
-                    localStorage.setItem("nutshell_customer", exists.id)
+                    localStorage.setItem("disc-app_user", exists.id)
                     history.push("/")
                 } else {
                     existDialog.current.showModal()
@@ -39,7 +39,7 @@ export const Login = props => {
 
             <section>
                 <form className="form--login" onSubmit={handleLogin}>
-                    <h1>Sons-of-Witches</h1>
+                    <h1>Disc-golf-App</h1>
                     <h2>Please sign in</h2>
                     <fieldset>
                         <label htmlFor="inputUsername"> Username </label>

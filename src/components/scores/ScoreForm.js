@@ -26,7 +26,7 @@ export const ScoreForm = () => {
 
     useEffect(() => {
         getScores().then(() => {
-            if (eventId) {
+            if (scoreId) {
                 getScoreById(scoreId)
                     .then(event => {
                         setScore(event)
@@ -63,7 +63,7 @@ export const ScoreForm = () => {
                     time: score.time,
                     date: score.date,
                     description: score.description,
-                    userId: parseInt(localStorage.getItem("nutshell_customer"))
+                    userId: parseInt(localStorage.getItem("disc-app_user"))
                 })
                     .then(() => history.push("/scores"))
             }
