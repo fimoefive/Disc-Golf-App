@@ -28,7 +28,7 @@ export const MessageList = () => {
 
     return (
         <>
-            <h1>Chat</h1>
+            <h1>Messages</h1>
             <button onClick={() => { history.push("/messages/create") }}>
                 Add Message
             </button>

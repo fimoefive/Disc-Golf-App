@@ -7,6 +7,7 @@ import { ScoreSearch } from "./Scores/ScoreSearch";
 import { ScoreList } from "./Scores/ScoreList";
 import { ScoreDetail } from "./Scores/ScoreDetail";
 
+import { MessageSearch } from "./Messages/MessageSearch";
 import { MessageProvider } from "./Messages/MessageProvider"
 import { MessageForm } from "./Messages/MessageForm"
 import { MessageList } from "./Messages/MessageList"
@@ -45,6 +46,13 @@ export const ApplicationViews = () => {
 
 
             <MessageProvider>
+                <Route exact path="/messages">
+                    <MessageList />
+                    <MessageSearch />
+                </Route>
+            </MessageProvider>
+
+            <MessageProvider>
                 <Route exact path="/messages/create">
                     <MessageForm />
                 </Route>
@@ -53,12 +61,6 @@ export const ApplicationViews = () => {
             <MessageProvider>
                 <Route exact path="/messages/edit/:chatId(\d+)">
                     <MessageForm />
-                </Route>
-            </MessageProvider>
-
-            <MessageProvider>
-                <Route exact path="/messages">
-                    <MessageList />
                 </Route>
             </MessageProvider>
 
