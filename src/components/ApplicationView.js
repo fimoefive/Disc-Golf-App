@@ -7,6 +7,11 @@ import { ScoreSearch } from "./Scores/ScoreSearch";
 import { ScoreList } from "./Scores/ScoreList";
 import { ScoreDetail } from "./Scores/ScoreDetail";
 
+import { MessageProvider } from "./Messages/MessageProvider"
+import { MessageForm } from "./Messages/MessageForm"
+import { MessageList } from "./Messages/MessageList"
+import { MessageDetail } from "./Messages/MessageDetail"
+
 
 
 
@@ -38,6 +43,30 @@ export const ApplicationViews = () => {
                 </Route>
             </ScoreProvider>
 
+
+            <MessageProvider>
+                <Route exact path="/messages/create">
+                    <MessageForm />
+                </Route>
+            </MessageProvider>
+
+            <MessageProvider>
+                <Route exact path="/messages/edit/:chatId(\d+)">
+                    <MessageForm />
+                </Route>
+            </MessageProvider>
+
+            <MessageProvider>
+                <Route exact path="/messages">
+                    <MessageList />
+                </Route>
+            </MessageProvider>
+
+            <MessageProvider>
+                <Route exact path="/messages/detail/:chatId(\d+)">
+                    <MessageDetail />
+                </Route>
+            </MessageProvider>
 
         </>
     )
