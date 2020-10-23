@@ -36,9 +36,7 @@
       "id": 7
     }
   ],
-  "scores": [
- 
-  ],
+  "scores": [],
   "games": [
     {
       "userId": 1,
@@ -48,7 +46,7 @@
       "score": "184",
       "id": 1
     },
-       {
+    {
       "userId": 1,
       "title": "Game 2",
       "course": "Seven Oaks",
