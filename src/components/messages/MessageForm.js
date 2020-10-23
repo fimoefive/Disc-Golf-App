@@ -12,7 +12,7 @@ export const MessageForm = () => {
     const history = useHistory()
 
     const handleControlledInputChange = (event) => {
-        const newMessage = { ...chat }
+        const newMessage = { ...message }
 
         newMessage[event.target.name] = event.target.value
         setMessage(newMessage)
@@ -36,16 +36,16 @@ export const MessageForm = () => {
         setIsLoading(true)
         if (chatId) {
             editMessage({
-                id: chat.id,
+                id: message.id,
                 userId: parseInt(localStorage.getItem("disc-app_user")),
-                message: chat.messageInput
+                message: message.messageInput
             })
                 .then(() => history.push("/messages"))
         }
         else {
             addMessage({
                 userId: parseInt(localStorage.getItem("disc-app_user")),
-                message: chat.messageInput
+                message: message.messageInput
             })
                 .then(() => history.push("/messages"))
         }
@@ -59,7 +59,7 @@ export const MessageForm = () => {
                     <input type="text" id="message" name="messageInput" title="title" required autoFocus className="form-control"
                         placeholder="What's on your mind?"
                         onChange={handleControlledInputChange}
-                        defaultValue={chat.messageInput} />
+                        defaultValue={message.messageInput} />
                 </div>
             </fieldset>
             <button className="btn btn-primary"

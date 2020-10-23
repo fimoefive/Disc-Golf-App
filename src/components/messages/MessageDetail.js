@@ -11,7 +11,7 @@ export const MessageDetail = () => {
     const { messageId } = useParams();
 
     useEffect(() => {
-        getMessageById(chatId)
+        getMessageById(messageId)
             .then((response) => {
                 setMessage(response)
             })
@@ -19,11 +19,11 @@ export const MessageDetail = () => {
 
     return (
         <section className="chat">
-            <h3 className="chat__message">{chat.message}</h3>
-            <div className="chat__userId">UserId: {chat.userId}</div>
+            <h3 className="chat__message">{message.message}</h3>
+            <div className="chat__userId">UserId: {message.userId}</div>
             <button onClick={
                 () => {
-                    deleteMessage(chat.id)
+                    deleteMessage(message.id)
                         .then(() => {
                             history.push("/messages")
                         })
@@ -32,7 +32,7 @@ export const MessageDetail = () => {
             }>Delete Message</button>
 
             <button onClick={() => {
-                history.push(`/messages/edit/${chat.id}`)
+                history.push(`/messages/edit/${message.id}`)
             }}>Edit Message</button>
         </section>
     )
