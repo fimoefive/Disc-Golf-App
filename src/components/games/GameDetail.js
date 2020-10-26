@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from "react";
 import { useParams, useHistory } from "react-router-dom";
 import { GameContext } from "./GameProvider";
-import "./Articles.css";
+import "./Game.css";
 
 
 export const GameDetail = () => {
@@ -18,7 +18,7 @@ export const GameDetail = () => {
 
 
     useEffect(() => {
-        getGameById(articleId)
+        getGameById(gameId)
             .then((response) => {
                 setGame(response)
                 if (user === response.user.id) {
@@ -28,19 +28,19 @@ export const GameDetail = () => {
     }, [])
 
     return (
-        <section className="article">
-            <h3 className="article__name">{article?.title}</h3>
-            <div className="article__summary">{article?.summary}</div>
-            <div className="article__URL">{article?.URL}</div>
-            <div className="article__user">Posted by: {article?.user.username}</div>
-            <div className="article__date">Posted on: {article?.date.split("T")[0]}</div>
+        <section className="game">
+            <h3 className="game__name">{game?.title}</h3>
+            <div className="game__summary">{game?.summary}</div>
+            <div className="game__URL">{game?.URL}</div>
+            <div className="game__user">Posted by: {game?.user.username}</div>
+            <div className="game__date">Posted on: {game?.date.split("T")[0]}</div>
             <button
                 hidden={!owned}
                 onClick={
                     () => {
-                        deleteGame(article.id)
+                        deleteGame(game.id)
                             .then(() => {
-                                history.push("/articles")
+                                history.push("/games")
                             })
                     }}>Delete Game
 			</button>

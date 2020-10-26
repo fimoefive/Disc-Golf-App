@@ -1,5 +1,5 @@
 import React, { useContext, useEffect } from "react";
-import { GameContext } from "./GamesProvider";
+import { GameContext } from "./GameProvider";
 import "./Game.css";
 
 export const GameSearch = () => {

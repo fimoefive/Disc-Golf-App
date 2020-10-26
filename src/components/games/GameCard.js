@@ -4,15 +4,15 @@ import "./Game.css";
 
 
 export const GameCard = ({ games }) => (
-    <section className="articles">
-        <h3 className="article_title">{articles.title}</h3>
-        <Link to={`/articles/detail/${articles.id}`}>
+    <section className="games">
+        <h3 className="game_title">{games.title}</h3>
+        <Link to={`/games/detail/${games.id}`}>
             {articles.title}
         </Link>
-        <div className="article_summary">{articles.summary}</div>
-        <div className="article_url">{articles.URL}</div>
-        <div className="article__user">Posted by: {articles.user.username}</div>
+        <div className="game_summary">{games.summary}</div>
+        <div className="game_url">{games.URL}</div>
+        <div className="game__user">Posted by: {games.user.username}</div>
 
-        <div className="article__date">At: {articles.date?.split("T")[0]}</div>
+        <div className="game__date">At: {games.date?.split("T")[0]}</div>
     </section>
 )

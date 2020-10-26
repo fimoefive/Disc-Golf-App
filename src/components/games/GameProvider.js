@@ -7,7 +7,7 @@ export const GameProvider = (props) => {
     const [searchTerms, setSearchTerms] = useState();
 
     const getGames = () => {
-        return fetch(`http://localhost:8088/articles?_expand=user&_sort=id&_order=DESC`)
+        return fetch(`http://localhost:8088/games?_expand=user&_sort=id&_order=DESC`)
             .then(response => response.json())
             .then(setGames)
     }
@@ -27,21 +27,21 @@ export const GameProvider = (props) => {
             .then(response => response.json())
     }
 
-    const deleteGame = articleId => {
-        return fetch(`http://localhost:8088/games/${articleId}`, {
+    const deleteGame = gameId => {
+        return fetch(`http://localhost:8088/games/${gameId}`, {
             method: "DELETE"
         })
     }
 
-    const editGame = article => {
-        return fetch(`http://localhost:8088/games/${article.id}`, {
+    const editGame = game => {
+        return fetch(`http://localhost:8088/games/${game.id}`, {
             method: "PUT",
             headers: {
                 "Content-Type": "application/json"
             },
-            body: JSON.stringify(article)
+            body: JSON.stringify(game)
         })
-            .then(getArticles)
+            .then(getGames)
     }
 
     return (

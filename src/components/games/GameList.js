@@ -1,41 +1,41 @@
 import React, { useContext, useEffect, useState } from "react";
 import { useHistory } from "react-router-dom";
-import { ArticleContext } from "./ArticlesProvider";
-import { ArticleCard } from "./ArticlesCard";
-import "./Articles.css";
+import { GameContext } from "./GameProvider";
+import { GameCard } from "./GameCard";
+import "./Game.css";
 
 export const GamesList = () => {
-    const { articles, getArticles, searchTerms } = useContext(ArticleContext)
-    const [filteredArticles, setFilteredArticles] = useState([])
+    const { games, getGames, searchTerms } = useContext(GameContext)
+    const [filteredGames, setFilteredGames] = useState([])
 
     useEffect(() => {
-        getArticles()
+        getGames()
     }, [])
 
     const history = useHistory()
 
     useEffect(() => {
         if (searchTerms !== "") {
-            const subset = articles.filter(article => article.title.toLowerCase().includes(searchTerms.toLowerCase().trim()))
-            setFilteredArticles(subset)
+            const subset = games.filter(game => game.title.toLowerCase().includes(searchTerms.toLowerCase().trim()))
+            setFilteredGames(subset)
         } else {
-            setFilteredArticles(articles)
+            setFilteredGames(games)
         }
-    }, [searchTerms, articles])
+    }, [searchTerms, games])
 
     return (
         <>
-            <h2>Articles</h2>
-            <button onClick={() => { history.push("/articles/create") }}>
-                Create News Article
+            <h2>Games</h2>
+            <button onClick={() => { history.push("/games/create") }}>
+                Create Game
             </button>
-            <div className="articles">
+            <div className="games">
                 {
-                    filteredArticles.map(article => {
-                        return <ArticleCard key={article.id} articles={article} />
+                    filteredGames.map(article => {
+                        return <GameCard key={game.id} games={game} />
                     })
                 }
             </div>
         </>
     )
-}
+};

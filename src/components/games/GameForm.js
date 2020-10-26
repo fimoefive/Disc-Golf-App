@@ -1,26 +1,26 @@
 import React, { useContext, useEffect, useState } from "react";
 import { useHistory, useParams } from "react-router-dom";
-import { ArticleContext } from "../Articles/ArticlesProvider";
+import { GameContext } from "../Games/GameProvider";
 
 
 export const GameForm = () => {
     const { getGames, getGameById, editGame, addGame } = useContext(GameContext)
 
-    const [article, setArticle] = useState({})
+    const [game, setGame] = useState({})
     const [isLoading, setIsLoading] = useState(true)
     const { gameId } = useParams()
     const history = useHistory()
 
     const handleControlledInputChange = (event) => {
         const newGame = { ...game }
-        newArticle[event.target.title] = event.target.value
+        newGame[event.target.title] = event.target.value
         setGame(newGame)
     }
 
     useEffect(() => {
         getGames().then(() => {
             if (gameId) {
-                getArticleById(gameId)
+                getGameById(gameId)
                     .then(article => {
                         setGame(article)
                         setIsLoading(false)
@@ -39,20 +39,20 @@ export const GameForm = () => {
             setIsLoading(true)
             if (gameId) {
                 editGame({
-                    id: article.id,
-                    title: article.title,
-                    summary: article.summary,
-                    URL: article.URL,
-                    userId: parseInt(article.userId),
+                    id: game.id,
+                    title: game.title,
+                    summary: game.summary,
+                    URL: game.URL,
+                    userId: parseInt(game.userId),
                     date: new Date()
                 })
                     .then(() => history.push("/games"))
             }
             else {
-                addArticle({
-                    title: article.title,
-                    summary: article.summary,
-                    URL: article.URL,
+                addGame({
+                    title: game.title,
+                    summary: game.summary,
+                    URL: game.URL,
                     userId: parseInt(localStorage.getItem("disc-app_user")),
                     date: new Date()
                 })
@@ -62,33 +62,33 @@ export const GameForm = () => {
     }
 
     return (
-        <form className="articleForm">
-            <h2 className="articleForm_title">{gameId ? "Edit Article" : "Create News Article"}</h2>
+        <form className="gameForm">
+            <h2 className="gameForm_title">{gameId ? "Edit Article" : "Create Game"}</h2>
             <fieldset>
                 <div className="from-group">
-                    <label htmlFor="articleTitle">Game Title</label>
-                    <input type="text" id="articleTitle" title="title" required autoFocus className="from-control"
+                    <label htmlFor="gameTitle">Game Title</label>
+                    <input type="text" id="gameTitle" title="title" required autoFocus className="from-control"
                         placeholder="Title"
                         onChange={handleControlledInputChange}
-                        defaultValue={article.title} />
+                        defaultValue={game.title} />
                 </div>
             </fieldset>
             <fieldset>
                 <div className="from-group">
-                    <label htmlFor="articleSummary">Article Summary</label>
-                    <input type="text" id="articleSummary" title="summary" required autoFocus className="from-control"
+                    <label htmlFor="gameSummary">Article Summary</label>
+                    <input type="text" id="gameSummary" title="summary" required autoFocus className="from-control"
                         placeholder="Summary"
                         onChange={handleControlledInputChange}
-                        defaultValue={article.summary} />
+                        defaultValue={game.summary} />
                 </div>
             </fieldset>
             <fieldset>
                 <div className="from-group">
-                    <label htmlFor="articleURL">Article URL</label>
-                    <input type="text" id="articleURL" title="URL" required autoFocus className="from-control"
+                    <label htmlFor="gameURL">Article URL</label>
+                    <input type="text" id="gameURL" title="URL" required autoFocus className="from-control"
                         placeholder="URL"
                         onChange={handleControlledInputChange}
-                        defaultValue={article.URL} />
+                        defaultValue={game.URL} />
                 </div>
             </fieldset>
             <button className="btn btn-primary"
