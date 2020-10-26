@@ -38,7 +38,7 @@ export const FollowerForm = () => {
         if (!foundFriend) {
             window.alert("That user does not exist!")
         }
-        else if (foundFriend.id === parseInt(localStorage.getItem("nutshell_customer"))) {
+        else if (foundFriend.id === parseInt(localStorage.getItem("disc-app_user"))) {
             window.alert("You can not add yourself!")
         }
         else {
@@ -54,12 +54,12 @@ export const FollowerForm = () => {
     }
 
     return (
-        <form className="friendForm">
-            <h2 className="friendForm_title">Add Follower</h2>
+        <form className="followerForm">
+            <h2 className="followerForm_title">Add Follower</h2>
             <fieldset>
                 <div className="from-group">
-                    <label htmlFor="friendName">UserName</label>
-                    <input type="text" ref={friendName} id="articleName" name="name" required autoFocus className="from-control"
+                    <label htmlFor="followerName">UserName</label>
+                    <input type="text" ref={followerName} id="gameName" name="name" required autoFocus className="from-control"
                         placeholder="Followers Name"
                         onChange={handleControlledInputChange} />
                 </div>
