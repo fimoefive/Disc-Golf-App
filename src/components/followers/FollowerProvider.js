@@ -1,29 +1,29 @@
 import React, { useState, createContext } from "react";
 
-export const FriendContext = createContext();
+export const FollowerContext = createContext();
 
-export const FriendsProvider = (props) => {
-    const [friends, setFriends] = useState([]);
+export const FollowerProvider = (props) => {
+    const [followers, setFollowers] = useState([]);
     const [searchTerms, setSearchTerms] = useState([]);
 
-    const getFriends = () => {
-        return fetch(`http://localhost:8088/friends?_expand=user`)
+    const getFollowers = () => {
+        return fetch(`http://localhost:8088/followers?_expand=user`)
             .then(response => response.json())
             .then(res => {
-                setFriends(res)
+                setFollowers(res)
                 return res
             })
     }
 
-    const addFriend = (x) => {
-        return fetch(`http://localhost:8088/friends`, {
+    const addFollower = (x) => {
+        return fetch(`http://localhost:8088/followers`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
             },
             body: JSON.stringify(x)
         })
-            .then(getFriends)
+            .then(getFollowers)
     }
 
     const deleteFollower = (x) => {
@@ -39,7 +39,7 @@ export const FriendsProvider = (props) => {
 
     return (
         <FollowerContext.Provider value={{
-            friends, getUsers, getFriends, deleteFriend, addFriend, searchTerms, setSearchTerms
+            followers, getUsers, getFollowers, deleteFollower, addFollower, searchTerms, setSearchTerms
         }}>
             {props.children}
         </FollowerContext.Provider>

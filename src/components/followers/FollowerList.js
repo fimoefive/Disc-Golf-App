@@ -14,18 +14,18 @@ export const FollowerList = () => {
             const x = res.filter(user => user.activeUserId === parseInt(localStorage.getItem("disc-app_user")))
             setFollowers(x)
         })
-    }, [])
+    }, []);
 
     return (
         <>
-            <h2>Follower List</h2>
-            <button className="add_friend" onClick={() => {
+            <h2>Followers List</h2>
+            <button className="add_follower" onClick={() => {
                 history.push("/followers/create")
             }}>Add Follower</button>
-            <div className="friends">
+            <div className="followers">
                 {
-                    followerList.map(friend => {
-                        return <FollowerCard key={friend.id} friends={friend} />
+                    followerList.map(follower => {
+                        return <FollowerCard key={follower.id} friends={follower} />
                     })
                 }
             </div>

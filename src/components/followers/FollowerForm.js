@@ -5,7 +5,7 @@ import { FollowerContext } from "./FollowerProvider";
 export const FollowerForm = () => {
     const { getFollowers, addFollower, getUsers } = useContext(FollowerContext)
 
-    const [followers, setFollowers] = useState([])
+    const [follower, setFollowers] = useState([])
     const [follower, setFollower] = useState([])
     const [users, setUsers] = useState([])
     const [isLoading, setIsLoading] = useState(true)
@@ -15,7 +15,7 @@ export const FollowerForm = () => {
 
     const handleControlledInputChange = (event) => {
         const newFollower = { ...follower }
-        newFriend[event.target.name] = event.target.value
+        newFollower[event.target.name] = event.target.value
         setFollower(newFollower)
     }
 
@@ -25,11 +25,11 @@ export const FollowerForm = () => {
             setFollowers(x)
             setIsLoading(false)
         })
-    }, [])
+    }, []);
 
     useEffect(() => {
         getUsers().then(setUsers)
-    }, [])
+    }, []);
 
     const constructFollowerObject = () => {
 
@@ -43,9 +43,9 @@ export const FollowerForm = () => {
         }
         else {
             setIsLoading(true)
-            addFriend({
+            addFollower({
                 userId: foundFriend.id,
-                activeUserId: parseInt(localStorage.getItem("nutshell_customer")),
+                activeUserId: parseInt(localStorage.getItem("disc-app_user")),
             })
                 .then(() => {
                     history.push("/")

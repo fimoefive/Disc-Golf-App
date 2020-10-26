@@ -1,10 +1,9 @@
 import React, { useContext } from "react";
 import { useHistory } from "react-router-dom";
 import { FollowerContext } from "./FollowerProvider";
-import { FollowerList } from "./FollowerList.js";
 import "./Follower.css";
 
-export const FriendCard = ({ followers }) => {
+export const FollowerCard = ({ followers }) => {
 
     const { deleteFollower, getFollowers } = useContext(FollowerContext)
     const history = useHistory()
