@@ -20,9 +20,26 @@ import { MessageDetail } from "./Messages/MessageDetail";
 import { MessageProvider } from "./Messages/MessageProvider";
 import { MessageSearch } from "./Messages/MessageSearch";
 
+import { FollowerList } from "./Followers/FollowerList";
+import { FollowerProvider } from "./Followers/FollowerProvider";
+import { FollowerForm } from "./Followers/FollowerForm";
+
 export const ApplicationViews = () => {
     return (
         <>
+            <FollowerProvider>
+                <Route exact path="/">
+                    <Home />
+                    <FollowerList />
+                </Route>
+            </FollowerProvider>
+
+            <FollowerProvider>
+                <Route exact path="/followers/create">
+                    <FollowerForm />
+                </Route>
+            </FollowerProvider>
+
             <ScoreProvider>
                 <Route exact path="/scores">
                     <ScoreSearch />
@@ -47,7 +64,6 @@ export const ApplicationViews = () => {
                     <ScoreForm />
                 </Route>
             </ScoreProvider>
-
 
             <GameProvider>
                 <Route exact path="/games">
@@ -74,7 +90,6 @@ export const ApplicationViews = () => {
                 </Route>
             </GameProvider>
 
-
             <MessageProvider>
                 <Route exact path="/messages">
                     <MessageList />
@@ -99,7 +114,6 @@ export const ApplicationViews = () => {
                     <MessageDetail />
                 </Route>
             </MessageProvider>
-
         </>
     )
 };
