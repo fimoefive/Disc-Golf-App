@@ -51,4 +51,4 @@ export const GameDetail = () => {
                 }}>Edit</button>
         </section>
     )
-}
+};

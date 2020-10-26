@@ -51,4 +51,4 @@ export const GameProvider = (props) => {
             {props.children}
         </GameContext.Provider>
     )
-}
+};

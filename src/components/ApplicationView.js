@@ -1,20 +1,24 @@
 import React from "react";
 import { Route } from "react-router-dom";
 import { Home } from "./Home";
+
 import { ScoreForm } from "./Scores/ScoreForm";
-import { ScoreProvider } from "./Scores/ScoreProvider";
-import { ScoreSearch } from "./Scores/ScoreSearch";
 import { ScoreList } from "./Scores/ScoreList";
 import { ScoreDetail } from "./Scores/ScoreDetail";
+import { ScoreProvider } from "./Scores/ScoreProvider";
+import { ScoreSearch } from "./Scores/ScoreSearch";
 
+import { GameForm } from "./Games/GameForm";
+import { GamesList } from "./Games/GameList";
+import { GameDetail } from "./Games/GameDetail";
+import { GameProvider } from "./Games/GameProvider";
+import { GameSearch } from "./Games/GameSearch";
+
+import { MessageForm } from "./Messages/MessageForm";
+import { MessageList } from "./Messages/MessageList";
+import { MessageDetail } from "./Messages/MessageDetail";
+import { MessageProvider } from "./Messages/MessageProvider";
 import { MessageSearch } from "./Messages/MessageSearch";
-import { MessageProvider } from "./Messages/MessageProvider"
-import { MessageForm } from "./Messages/MessageForm"
-import { MessageList } from "./Messages/MessageList"
-import { MessageDetail } from "./Messages/MessageDetail"
-
-
-
 
 export const ApplicationViews = () => {
     return (
@@ -43,6 +47,32 @@ export const ApplicationViews = () => {
                     <ScoreForm />
                 </Route>
             </ScoreProvider>
+
+
+            <GameProvider>
+                <Route exact path="/games">
+                    <GameSearch />
+                    <GamesList />
+                </Route>
+            </GameProvider>
+
+            <GameProvider>
+                <Route exact path="/games/detail/:gameId(\d+)">
+                    <GameDetail />
+                </Route>
+            </GameProvider>
+
+            <GameProvider>
+                <Route exact path="/games/create">
+                    <GameForm />
+                </Route>
+            </GameProvider>
+
+            <GameProvider>
+                <Route exact path="/games/edit/:gameId(\d+)">
+                    <GameForm />
+                </Route>
+            </GameProvider>
 
 
             <MessageProvider>

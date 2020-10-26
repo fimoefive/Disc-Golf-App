@@ -7,7 +7,7 @@ export const GameCard = ({ games }) => (
     <section className="games">
         <h3 className="game_title">{games.title}</h3>
         <Link to={`/games/detail/${games.id}`}>
-            {articles.title}
+            {games.title}
         </Link>
         <div className="game_summary">{games.summary}</div>
         <div className="game_url">{games.URL}</div>
@@ -15,4 +15,4 @@ export const GameCard = ({ games }) => (
 
         <div className="game__date">At: {games.date?.split("T")[0]}</div>
     </section>
-)
+);

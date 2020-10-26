@@ -21,8 +21,8 @@ export const GameForm = () => {
         getGames().then(() => {
             if (gameId) {
                 getGameById(gameId)
-                    .then(article => {
-                        setGame(article)
+                    .then(game => {
+                        setGame(game)
                         setIsLoading(false)
                     })
             } else {
@@ -63,7 +63,7 @@ export const GameForm = () => {
 
     return (
         <form className="gameForm">
-            <h2 className="gameForm_title">{gameId ? "Edit Article" : "Create Game"}</h2>
+            <h2 className="gameForm_title">{gameId ? "Edit Game" : "Create Game"}</h2>
             <fieldset>
                 <div className="from-group">
                     <label htmlFor="gameTitle">Game Title</label>
@@ -75,7 +75,7 @@ export const GameForm = () => {
             </fieldset>
             <fieldset>
                 <div className="from-group">
-                    <label htmlFor="gameSummary">Article Summary</label>
+                    <label htmlFor="gameSummary">Game Summary</label>
                     <input type="text" id="gameSummary" title="summary" required autoFocus className="from-control"
                         placeholder="Summary"
                         onChange={handleControlledInputChange}
@@ -84,7 +84,7 @@ export const GameForm = () => {
             </fieldset>
             <fieldset>
                 <div className="from-group">
-                    <label htmlFor="gameURL">Article URL</label>
+                    <label htmlFor="gameURL">Game Score</label>
                     <input type="text" id="gameURL" title="URL" required autoFocus className="from-control"
                         placeholder="URL"
                         onChange={handleControlledInputChange}
@@ -95,9 +95,9 @@ export const GameForm = () => {
                 disabled={isLoading}
                 onClick={event => {
                     event.preventDefault() // Prevent browser from submitting the form
-                    constructArticleObject()
+                    constructGameObject()
                 }}>
                 {gameId ? "Save Game" : "Create Game"}</button>
         </form>
     )
-}
+};

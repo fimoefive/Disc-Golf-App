@@ -31,7 +31,7 @@ export const GamesList = () => {
             </button>
             <div className="games">
                 {
-                    filteredGames.map(article => {
+                    filteredGames.map(game => {
                         return <GameCard key={game.id} games={game} />
                     })
                 }
