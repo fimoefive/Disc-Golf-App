@@ -21,8 +21,8 @@ export const FollowerForm = () => {
 
     useEffect(() => {
         getFollowers().then(res => {
-            const x = res.filter(user => user.activeUserId === parseInt(localStorage.getItem("disc-app_user")))
-            setFollowers(x)
+            const g = res.filter(user => user.activeUserId === parseInt(localStorage.getItem("disc-app_user")))
+            setFollowers(g)
             setIsLoading(false)
         })
     }, []);
@@ -33,18 +33,18 @@ export const FollowerForm = () => {
 
     const constructFollowerObject = () => {
 
-        const foundFriend = users.find(user => user.username === followerName.current.value)
+        const foundFollower = users.find(user => user.username === followerName.current.value)
 
-        if (!foundFriend) {
+        if (!foundFollower) {
             window.alert("That user does not exist!")
         }
-        else if (foundFriend.id === parseInt(localStorage.getItem("disc-app_user"))) {
+        else if (foundFollower.id === parseInt(localStorage.getItem("disc-app_user"))) {
             window.alert("You can not add yourself!")
         }
         else {
             setIsLoading(true)
             addFollower({
-                userId: foundFriend.id,
+                userId: foundFollower.id,
                 activeUserId: parseInt(localStorage.getItem("disc-app_user")),
             })
                 .then(() => {
