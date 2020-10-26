@@ -8,21 +8,21 @@ export const GameForm = () => {
 
     const [article, setArticle] = useState({})
     const [isLoading, setIsLoading] = useState(true)
-    const { articleId } = useParams()
+    const { gameId } = useParams()
     const history = useHistory()
 
     const handleControlledInputChange = (event) => {
-        const newArticle = { ...article }
+        const newGame = { ...game }
         newArticle[event.target.title] = event.target.value
-        setArticle(newArticle)
+        setGame(newGame)
     }
 
     useEffect(() => {
-        getArticles().then(() => {
-            if (articleId) {
-                getArticleById(articleId)
+        getGames().then(() => {
+            if (gameId) {
+                getArticleById(gameId)
                     .then(article => {
-                        setArticle(article)
+                        setGame(article)
                         setIsLoading(false)
                     })
             } else {
@@ -31,14 +31,14 @@ export const GameForm = () => {
         })
     }, [])
 
-    const constructArticleObject = () => {
-        if (parseInt(article.title) === 0) {
+    const constructGameObject = () => {
+        if (parseInt(game.title) === 0) {
             window.alert("Select a title")
         }
         else {
             setIsLoading(true)
-            if (articleId) {
-                editArticle({
+            if (gameId) {
+                editGame({
                     id: article.id,
                     title: article.title,
                     summary: article.summary,
@@ -46,27 +46,27 @@ export const GameForm = () => {
                     userId: parseInt(article.userId),
                     date: new Date()
                 })
-                    .then(() => history.push("/articles"))
+                    .then(() => history.push("/games"))
             }
             else {
                 addArticle({
                     title: article.title,
                     summary: article.summary,
                     URL: article.URL,
-                    userId: parseInt(localStorage.getItem("nutshell_customer")),
+                    userId: parseInt(localStorage.getItem("disc-app_user")),
                     date: new Date()
                 })
-                    .then(() => history.push("/articles"))
+                    .then(() => history.push("/games"))
             }
         }
     }
 
     return (
         <form className="articleForm">
-            <h2 className="articleForm_title">{articleId ? "Edit Article" : "Create News Article"}</h2>
+            <h2 className="articleForm_title">{gameId ? "Edit Article" : "Create News Article"}</h2>
             <fieldset>
                 <div className="from-group">
-                    <label htmlFor="articleTitle">Article Title</label>
+                    <label htmlFor="articleTitle">Game Title</label>
                     <input type="text" id="articleTitle" title="title" required autoFocus className="from-control"
                         placeholder="Title"
                         onChange={handleControlledInputChange}
@@ -97,7 +97,7 @@ export const GameForm = () => {
                     event.preventDefault() // Prevent browser from submitting the form
                     constructArticleObject()
                 }}>
-                {articleId ? "Save Article" : "Create News Article"}</button>
+                {gameId ? "Save Game" : "Create Game"}</button>
         </form>
     )
 }

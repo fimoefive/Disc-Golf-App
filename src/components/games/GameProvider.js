@@ -3,38 +3,38 @@ import React, { useState, createContext } from "react";
 export const GameContext = createContext();
 
 export const GameProvider = (props) => {
-    const [articles, setArticles] = useState([]);
+    const [games, setGames] = useState([]);
     const [searchTerms, setSearchTerms] = useState();
 
-    const getArticles = () => {
+    const getGames = () => {
         return fetch(`http://localhost:8088/articles?_expand=user&_sort=id&_order=DESC`)
             .then(response => response.json())
-            .then(setArticles)
+            .then(setGames)
     }
 
-    const addArticle = (x) => {
-        return fetch(`http://localhost:8088/articles`, {
+    const addGame = (y) => {
+        return fetch(`http://localhost:8088/games`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
             },
-            body: JSON.stringify(x)
+            body: JSON.stringify(y)
         })
-            .then(getArticles)
+            .then(getGames)
     }
-    const getArticleById = (id) => {
-        return fetch(`http://localhost:8088/articles/${id}?_expand=user`)
+    const getGameById = (id) => {
+        return fetch(`http://localhost:8088/games/${id}?_expand=user`)
             .then(response => response.json())
     }
 
-    const deleteArticle = articleId => {
-        return fetch(`http://localhost:8088/articles/${articleId}`, {
+    const deleteGame = articleId => {
+        return fetch(`http://localhost:8088/games/${articleId}`, {
             method: "DELETE"
         })
     }
 
-    const editArticle = article => {
-        return fetch(`http://localhost:8088/articles/${article.id}`, {
+    const editGame = article => {
+        return fetch(`http://localhost:8088/games/${article.id}`, {
             method: "PUT",
             headers: {
                 "Content-Type": "application/json"
@@ -45,10 +45,10 @@ export const GameProvider = (props) => {
     }
 
     return (
-        <ArticleContext.Provider value={{
-            articles, getArticles, editArticle, deleteArticle, addArticle, getArticleById, setSearchTerms, searchTerms
+        <GameContext.Provider value={{
+            games, getGames, editGame, deleteGame, addGame, getGameById, setSearchTerms, searchTerms
         }}>
             {props.children}
-        </ArticleContext.Provider>
+        </GameContext.Provider>
     )
 }

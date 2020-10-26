@@ -75,7 +75,7 @@ export const ScoreForm = () => {
             <h2 className="scoreForm__name">{scoreId ? "Edit Score" : "Create Score"}</h2>
             <fieldset>
                 <div className="form-group">
-                    <label htmlFor="score-name">Event Name</label>
+                    <label htmlFor="score-name">Round Name</label>
                     <input type="text" id="scoreName" name="name" required autoFocus className="form-control"
                         placeholder="ScoreName"
                         onChange={handleControlledInputChange}
