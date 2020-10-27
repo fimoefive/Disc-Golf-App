@@ -20,7 +20,7 @@ export const FollowerCard = ({ followers }) => {
                 () => {
                     handleDelete(followers.id)
                 }}>Delete Follower
-                    </button>
+                </button>
         </section>
     )
 };

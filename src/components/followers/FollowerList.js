@@ -14,7 +14,7 @@ export const FollowerList = () => {
             const x = res.filter(user => user.activeUserId === parseInt(localStorage.getItem("disc-app_user")))
             setFollowers(x)
         })
-    }, []);
+    }, [])
 
     return (
         <>
@@ -25,7 +25,7 @@ export const FollowerList = () => {
             <div className="followers">
                 {
                     followerList.map(follower => {
-                        return <FollowerCard key={follower.id} friends={follower} />
+                        return <FollowerCard key={follower.id} followers={follower} />
                     })
                 }
             </div>

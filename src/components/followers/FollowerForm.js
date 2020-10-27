@@ -5,7 +5,7 @@ import { FollowerContext } from "./FollowerProvider";
 export const FollowerForm = () => {
     const { getFollowers, addFollower, getUsers } = useContext(FollowerContext)
 
-    const [follower, setFollowers] = useState([])
+    const [followers, setFollowers] = useState([])
     const [follower, setFollower] = useState([])
     const [users, setUsers] = useState([])
     const [isLoading, setIsLoading] = useState(true)

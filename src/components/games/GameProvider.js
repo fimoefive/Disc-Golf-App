@@ -12,13 +12,13 @@ export const GameProvider = (props) => {
             .then(setGames)
     }
 
-    const addGame = (g) => {
+    const addGame = (x) => {
         return fetch(`http://localhost:8088/games`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
             },
-            body: JSON.stringify(g)
+            body: JSON.stringify(x)
         })
             .then(getGames)
     }

@@ -2,13 +2,13 @@
   "users": [
     {
       "id": 1,
-      "username": "Matt",
-      "email": "matt@email.com"
+      "username": "Michael",
+      "email": "michael@email.com"
     },
     {
       "id": 2,
-      "username": "Martin",
-      "email": "martin@email.com"
+      "username": "Marty",
+      "email": "marty@email.com"
     },
     {
       "id": 3,
@@ -16,26 +16,16 @@
       "email": "braxton@email.com"
     },
     {
-      "id": 4,
-      "username": "Zach",
-      "email": "zach@email.com"
-    },
-    {
       "username": "Jerry",
       "email": "Jerry@email.com",
-      "id": 5
-    },
-    {
-      "username": "Jasmin",
-      "email": "jasmin@emil.com",
-      "id": 6
+      "id": 4
     },
     {
       "email": "martin@me.com",
       "username": "Martin",
-      "id": 7
+      "id": 5
     }
-  ],
+  ]
   "scores": [],
   "games": [
     {
@@ -52,7 +42,7 @@
       "course": "Seven Oaks",
       "date": "8/19/2020",
       "score": "91",
-      "id": 1
+      "id": 2
     },
     {
       "userId": 1,
@@ -60,7 +50,7 @@
       "course": "Cedar Hill",
       "date": "9/7/2020",
       "score": "100",
-      "id": 1
+      "id": 3
     }
   ],
   "followers": [
