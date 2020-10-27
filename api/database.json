@@ -16,41 +16,49 @@
       "email": "braxton@email.com"
     },
     {
+      "id": 4,
       "username": "Jerry",
-      "email": "Jerry@email.com",
-      "id": 4
+      "email": "Jerry@email.com"
     },
     {
+      "id": 5,
       "email": "martin@me.com",
-      "username": "Martin",
-      "id": 5
+      "username": "Martin"
+
     }
-  ]
-  "scores": [],
+  ],
+  "scores": [
+    {
+      "id":1,
+      "userId": 1,
+      "title": "Game 1"
+    }
+  ],
   "games": [
     {
+      "id": 1,
       "userId": 1,
       "title": "Game 1",
       "course": "Shelby Bottoms",
       "date": "8/10/2020",
-      "score": "184",
-      "id": 1
+      "score": "184"
     },
     {
+      "id": 2,
       "userId": 1,
       "title": "Game 2",
       "course": "Seven Oaks",
       "date": "8/19/2020",
-      "score": "91",
-      "id": 2
+      "score": "91"
     },
     {
+      "id": 3,
       "userId": 1,
       "title": "Game 3",
       "course": "Cedar Hill",
       "date": "9/7/2020",
-      "score": "100",
-      "id": 3
+      "score": "100"
+
     }
   ],
   "followers": [
@@ -82,9 +90,9 @@
       "message": "Hi!"
     },
     {
+      "id": 3,
       "userId": 2,
-      "message": "HI",
-      "id": 3
+      "message": "HI"
     }
   ]
 }
