@@ -51,8 +51,8 @@ export const ScoreForm = () => {
                     id: score.id,
                     name: score.name,
                     round: score.round,
-                    round2: score.round2,
-                    round3: score.round3,
+                    round: score.round,
+                    round3: score.roundThree,
                     round4: score.round4,
                     round5: score.round5,
                     round6: score.round6,
@@ -60,8 +60,8 @@ export const ScoreForm = () => {
                     round8: score.round8,
                     round9: score.round9,
                     total: score.total,
-                    startTime: score.startTime,
-                    endTime: score.endTime,
+                    time: score.time,
+                    time: score.time,
                     date: score.date,
                     userId: parseInt(score.userId)
                 })
@@ -71,8 +71,8 @@ export const ScoreForm = () => {
                 addScore({
                     name: score.name,
                     round: score.round,
-                    round2: score.round2,
-                    round3: score.round3,
+                    round: score.round,
+                    roundThree: score.roundThree,
                     round4: score.round4,
                     round5: score.round5,
                     round6: score.round6,
@@ -80,8 +80,8 @@ export const ScoreForm = () => {
                     round8: score.round8,
                     round9: score.round9,
                     total: score.total,
-                    startTime: score.startTime,
-                    endTime: score.endTime,
+                    time: score.time,
+                    time: score.time,
                     date: score.date,
                     userId: parseInt(localStorage.getItem("disc-app_user"))
                 })
@@ -117,7 +117,7 @@ export const ScoreForm = () => {
                     <input type="text" id="scoreRound2" name="round" required autoFocus className="form-control"
                         placeholder="Par"
                         onChange={handleControlledInputChange}
-                        defaultValue={score.round2} />
+                        defaultValue={score.round} />
                 </div>
             </fieldset>
             <fieldset>
@@ -126,7 +126,7 @@ export const ScoreForm = () => {
                     <input type="text" id="scoreRound3" name="round" required autoFocus className="form-control"
                         placeholder="Par"
                         onChange={handleControlledInputChange}
-                        defaultValue={score.round3} />
+                        defaultValue={score.roundThree} />
                 </div>
             </fieldset>
             <fieldset>

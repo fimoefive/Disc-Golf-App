@@ -11,7 +11,7 @@ export const ScoreSearch = () => {
 
     return (
         <>
-            Scores search:
+            ScoreCard Search:
             <input type="text"
                 className="input--wide"
                 onKeyUp={

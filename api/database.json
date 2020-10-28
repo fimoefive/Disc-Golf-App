@@ -17,8 +17,8 @@
     },
     {
       "id": 4,
-      "username": "Jerry",
-      "email": "Jerry@email.com"
+      "username": "James",
+      "email": "James@email.com"
     },
     {
       "id": 5,
@@ -32,6 +32,7 @@
       "name": "First Card",
       "round": "3",
       "total": "36",
+      "time": "15:00",
       "date": "2020-10-27",
       "userId": 5
     }
@@ -95,6 +96,11 @@
       "userId": 2,
       "activeUserId": 5,
       "id": 6
+    },
+    {
+      "userId": 4,
+      "activeUserId": 5,
+      "id": 7
     }
   ],
   "messages": [
