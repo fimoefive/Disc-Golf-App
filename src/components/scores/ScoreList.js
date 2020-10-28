@@ -28,7 +28,7 @@ export const ScoreList = () => {
 
     return (
         <>
-            <h2>Score</h2>
+            <h2>ScoreCard</h2>
             <button onClick={() => { history.push("/scores/create") }}>
                 Create Score
             </button>

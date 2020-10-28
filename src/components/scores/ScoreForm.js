@@ -50,9 +50,19 @@ export const ScoreForm = () => {
                 editScore({
                     id: score.id,
                     name: score.name,
-                    time: score.time,
+                    round: score.round,
+                    round2: score.round2,
+                    round3: score.round3,
+                    round4: score.round4,
+                    round5: score.round5,
+                    round6: score.round6,
+                    round7: score.round7,
+                    round8: score.round8,
+                    round9: score.round9,
+                    total: score.total,
+                    startTime: score.startTime,
+                    endTime: score.endTime,
                     date: score.date,
-                    description: score.description,
                     userId: parseInt(score.userId)
                 })
                     .then(() => history.push("/scores"))
@@ -60,9 +70,19 @@ export const ScoreForm = () => {
                 //POST - add
                 addScore({
                     name: score.name,
-                    time: score.time,
+                    round: score.round,
+                    round2: score.round2,
+                    round3: score.round3,
+                    round4: score.round4,
+                    round5: score.round5,
+                    round6: score.round6,
+                    round7: score.round7,
+                    round8: score.round8,
+                    round9: score.round9,
+                    total: score.total,
+                    startTime: score.startTime,
+                    endTime: score.endTime,
                     date: score.date,
-                    description: score.description,
                     userId: parseInt(localStorage.getItem("disc-app_user"))
                 })
                     .then(() => history.push("/scores"))
@@ -72,24 +92,125 @@ export const ScoreForm = () => {
 
     return (
         <form className="scoreForm">
-            <h2 className="scoreForm__name">{scoreId ? "Edit Score" : "Create Score"}</h2>
+            <h2 className="scoreForm__name">{scoreId ? "Edit Score" : "ScoreCard"}</h2>
             <fieldset>
                 <div className="form-group">
-                    <label htmlFor="score-name">Round Name</label>
+                    <label htmlFor="score-name">Score Card Title</label>
                     <input type="text" id="scoreName" name="name" required autoFocus className="form-control"
-                        placeholder="ScoreName"
+                        placeholder="Score Card Title"
                         onChange={handleControlledInputChange}
                         defaultValue={score.name} />
                 </div>
             </fieldset>
             <fieldset>
                 <div className="form-group">
-                    <label htmlFor="score-time">Score Time</label>
-                    <input type="time"
-                        name="time" id="scoreTime" className="form-control"
-                        placeholder="Time"
+                    <label htmlFor="score-round">Round One</label>
+                    <input type="text" id="scoreRound" name="round" required autoFocus className="form-control"
+                        placeholder="Round"
                         onChange={handleControlledInputChange}
-                        defaultValue={score.time} />
+                        defaultValue={score.round} />
+                </div>
+            </fieldset>
+            <fieldset>
+                <div className="form-group">
+                    <label htmlFor="score-round">Round Two</label>
+                    <input type="text" id="scoreRound" name="round" required autoFocus className="form-control"
+                        placeholder="Round"
+                        onChange={handleControlledInputChange}
+                        defaultValue={score.round2} />
+                </div>
+            </fieldset>
+            <fieldset>
+                <div className="form-group">
+                    <label htmlFor="score-round">Round Three</label>
+                    <input type="text" id="scoreRound" name="round" required autoFocus className="form-control"
+                        placeholder="Round"
+                        onChange={handleControlledInputChange}
+                        defaultValue={score.round3} />
+                </div>
+            </fieldset>
+            <fieldset>
+                <div className="form-group">
+                    <label htmlFor="score-round">Round Four</label>
+                    <input type="text" id="scoreRound" name="round" required autoFocus className="form-control"
+                        placeholder="Round"
+                        onChange={handleControlledInputChange}
+                        defaultValue={score.round4} />
+                </div>
+            </fieldset>
+            <fieldset>
+                <div className="form-group">
+                    <label htmlFor="score-round">Round Five</label>
+                    <input type="text" id="scoreRound" name="round" required autoFocus className="form-control"
+                        placeholder="Round"
+                        onChange={handleControlledInputChange}
+                        defaultValue={score.round5} />
+                </div>
+            </fieldset>
+            <fieldset>
+                <div className="form-group">
+                    <label htmlFor="score-round">Round Six</label>
+                    <input type="text" id="scoreRound" name="round" required autoFocus className="form-control"
+                        placeholder="Round"
+                        onChange={handleControlledInputChange}
+                        defaultValue={score.round6} />
+                </div>
+            </fieldset>
+            <fieldset>
+                <div className="form-group">
+                    <label htmlFor="score-round">Round Seven</label>
+                    <input type="text" id="scoreRound" name="round" required autoFocus className="form-control"
+                        placeholder="Round"
+                        onChange={handleControlledInputChange}
+                        defaultValue={score.round7} />
+                </div>
+            </fieldset>
+            <fieldset>
+                <div className="form-group">
+                    <label htmlFor="score-round">Round Eight</label>
+                    <input type="text" id="scoreRound" name="round" required autoFocus className="form-control"
+                        placeholder="Round"
+                        onChange={handleControlledInputChange}
+                        defaultValue={score.round8} />
+                </div>
+            </fieldset>
+            <fieldset>
+                <div className="form-group">
+                    <label htmlFor="score-round">Round Nine</label>
+                    <input type="text" id="scoreRound" name="round" required autoFocus className="form-control"
+                        placeholder="Round"
+                        onChange={handleControlledInputChange}
+                        defaultValue={score.round9} />
+                </div>
+            </fieldset>
+            <fieldset>
+                <div className="form-group">
+                    <label htmlFor="score-total">Total Score</label>
+                    <input type="text"
+                        name="total" id="scoreTotal" className="form-control"
+                        placeholder="Total"
+                        onChange={handleControlledInputChange}
+                        defaultValue={score.total} />
+                </div>
+            </fieldset>
+            <fieldset>
+                <div className="form-group">
+                    <label htmlFor="start-time">Start Time</label>
+                    <input type="time"
+                        name="time" id="startTime" className="form-control"
+                        placeholder="Start Time"
+                        onChange={handleControlledInputChange}
+                        defaultValue={score.startTime} />
+                </div>
+            </fieldset>
+            <fieldset>
+                <div className="form-group">
+                    <label htmlFor="end-time">End Time</label>
+                    <input type="time"
+                        name="time" id="endTime" className="form-control"
+                        placeholder="End Time"
+                        onChange={handleControlledInputChange}
+                        defaultValue={score.endTime} />
                 </div>
             </fieldset>
             <fieldset>
@@ -100,16 +221,6 @@ export const ScoreForm = () => {
                         placeholder="Date"
                         onChange={handleControlledInputChange}
                         defaultValue={score.date} />
-                </div>
-            </fieldset>
-            <fieldset>
-                <div className="form-group">
-                    <label htmlFor="score-description">Score Description</label>
-                    <input type="text"
-                        name="description" id="scoreDescription" className="form-control"
-                        placeholder="Description"
-                        onChange={handleControlledInputChange}
-                        defaultValue={score.description} />
                 </div>
             </fieldset>
             <button type="submit"
