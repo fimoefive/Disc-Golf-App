@@ -106,7 +106,7 @@ export const ScoreForm = () => {
                 <div className="form-group">
                     <label htmlFor="score-round">Round One</label>
                     <input type="text" id="scoreRound" name="round" required autoFocus className="form-control"
-                        placeholder="Round"
+                        placeholder="Par"
                         onChange={handleControlledInputChange}
                         defaultValue={score.round} />
                 </div>
@@ -114,8 +114,8 @@ export const ScoreForm = () => {
             <fieldset>
                 <div className="form-group">
                     <label htmlFor="score-round">Round Two</label>
-                    <input type="text" id="scoreRound" name="round" required autoFocus className="form-control"
-                        placeholder="Round"
+                    <input type="text" id="scoreRound2" name="round" required autoFocus className="form-control"
+                        placeholder="Par"
                         onChange={handleControlledInputChange}
                         defaultValue={score.round2} />
                 </div>
@@ -123,8 +123,8 @@ export const ScoreForm = () => {
             <fieldset>
                 <div className="form-group">
                     <label htmlFor="score-round">Round Three</label>
-                    <input type="text" id="scoreRound" name="round" required autoFocus className="form-control"
-                        placeholder="Round"
+                    <input type="text" id="scoreRound3" name="round" required autoFocus className="form-control"
+                        placeholder="Par"
                         onChange={handleControlledInputChange}
                         defaultValue={score.round3} />
                 </div>
@@ -132,8 +132,8 @@ export const ScoreForm = () => {
             <fieldset>
                 <div className="form-group">
                     <label htmlFor="score-round">Round Four</label>
-                    <input type="text" id="scoreRound" name="round" required autoFocus className="form-control"
-                        placeholder="Round"
+                    <input type="text" id="scoreRound4" name="round" required autoFocus className="form-control"
+                        placeholder="Par"
                         onChange={handleControlledInputChange}
                         defaultValue={score.round4} />
                 </div>
@@ -141,8 +141,8 @@ export const ScoreForm = () => {
             <fieldset>
                 <div className="form-group">
                     <label htmlFor="score-round">Round Five</label>
-                    <input type="text" id="scoreRound" name="round" required autoFocus className="form-control"
-                        placeholder="Round"
+                    <input type="text" id="scoreRound5" name="round" required autoFocus className="form-control"
+                        placeholder="Par"
                         onChange={handleControlledInputChange}
                         defaultValue={score.round5} />
                 </div>
@@ -150,8 +150,8 @@ export const ScoreForm = () => {
             <fieldset>
                 <div className="form-group">
                     <label htmlFor="score-round">Round Six</label>
-                    <input type="text" id="scoreRound" name="round" required autoFocus className="form-control"
-                        placeholder="Round"
+                    <input type="text" id="scoreRound6" name="round" required autoFocus className="form-control"
+                        placeholder="Par"
                         onChange={handleControlledInputChange}
                         defaultValue={score.round6} />
                 </div>
@@ -159,8 +159,8 @@ export const ScoreForm = () => {
             <fieldset>
                 <div className="form-group">
                     <label htmlFor="score-round">Round Seven</label>
-                    <input type="text" id="scoreRound" name="round" required autoFocus className="form-control"
-                        placeholder="Round"
+                    <input type="text" id="scoreRound7" name="round" required autoFocus className="form-control"
+                        placeholder="Par"
                         onChange={handleControlledInputChange}
                         defaultValue={score.round7} />
                 </div>
@@ -168,8 +168,8 @@ export const ScoreForm = () => {
             <fieldset>
                 <div className="form-group">
                     <label htmlFor="score-round">Round Eight</label>
-                    <input type="text" id="scoreRound" name="round" required autoFocus className="form-control"
-                        placeholder="Round"
+                    <input type="text" id="scoreRound8" name="round" required autoFocus className="form-control"
+                        placeholder="Par"
                         onChange={handleControlledInputChange}
                         defaultValue={score.round8} />
                 </div>
@@ -177,8 +177,8 @@ export const ScoreForm = () => {
             <fieldset>
                 <div className="form-group">
                     <label htmlFor="score-round">Round Nine</label>
-                    <input type="text" id="scoreRound" name="round" required autoFocus className="form-control"
-                        placeholder="Round"
+                    <input type="text" id="scoreRound9" name="round" required autoFocus className="form-control"
+                        placeholder="Par"
                         onChange={handleControlledInputChange}
                         defaultValue={score.round9} />
                 </div>

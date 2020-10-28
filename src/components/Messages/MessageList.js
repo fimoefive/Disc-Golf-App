@@ -1,21 +1,18 @@
-import React, { useContext, useEffect, useState } from "react"
-import { ChatContext } from "./ChatProvider"
-import { ChatCard } from "./ChatCard"
-import "./Chat.css"
-import { useHistory } from "react-router-dom"
+import React, { useContext, useEffect, useState } from "react";
+import { useHistory } from "react-router-dom";
+import { MessageContext } from "./MessageProvider";
+import { MessageCard } from "./MessageCard";
+import "./Message.css";
 
-export const ChatList = () => {
-    const { messages, getChat, searchTerms } = useContext(ChatContext)
+export const MessageList = () => {
+    const { messages, getMessages, searchTerms } = useContext(MessageContext)
     const [filteredMessages, setFiltered] = useState([])
     const history = useHistory()
 
-    // Empty dependency array - useEffect only runs after first render
     useEffect(() => {
-        getChat()
+        getMessages()
     }, [])
 
-    // useEffect dependency array with dependencies - will run if dependency changes (state)
-    // searchTerms will cause a change
     useEffect(() => {
         if (searchTerms !== "") {
             const subset = messages.filter(chat => chat.renderedMessage.toLowerCase().includes(searchTerms))
@@ -34,10 +31,10 @@ export const ChatList = () => {
             <div className="chats">
                 {
                     filteredMessages.map(chat => {
-                        return <ChatCard key={chat.id} chat={chat} />
+                        return <MessageCard key={chat.id} chat={chat} />
                     })
                 }
             </div>
         </>
     )
-}
+};

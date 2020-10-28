@@ -1,9 +1,9 @@
-import React, { useContext } from "react"
-import { ChatContext } from "./ChatProvider"
-import "./Chat.css"
+import React, { useContext } from "react";
+import { MessageContext } from "./MessageProvider";
+import "./Message.css";
 
-export const ChatSearch = () => {
-    const { setSearchTerms } = useContext(ChatContext)
+export const MessageSearch = () => {
+    const { setSearchTerms } = useContext(MessageContext)
 
     return (
         <>
@@ -16,4 +16,4 @@ export const ChatSearch = () => {
                 placeholder="Enter your search terms ... " />
         </>
     )
-}
+};

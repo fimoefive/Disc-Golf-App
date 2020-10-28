@@ -28,16 +28,11 @@
   ],
   "scores": [
     {
-      "id": 1,
-      "userId": 1,
-      "title": "Game 1"
-    },
-    {
       "id": 2,
-      "name": "VSC",
-      "time": "14:00",
-      "date": "2020-10-29",
-      "description": "WALK",
+      "name": "First Card",
+      "round": "3",
+      "total": "36",
+      "date": "2020-10-27",
       "userId": 5
     }
   ],

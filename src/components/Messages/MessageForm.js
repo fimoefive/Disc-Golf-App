@@ -1,10 +1,10 @@
-import React, { useContext, useEffect, useState } from "react"
-import { ChatContext } from "./ChatProvider"
+import React, { useContext, useEffect, useState } from "react";
 import { useHistory, useParams } from 'react-router-dom';
-import "./Chat.css"
+import { MessageContext } from "./MessageProvider";
+import "./Message.css";
 
-export const ChatForm = () => {
-    const { getChat, getChatById, editChat, addChat } = useContext(ChatContext)
+export const MessageForm = () => {
+    const { getMessages, getMessageById, editMessage, addMessage } = useContext(MessageContext)
 
     const [chat, setChat] = useState({})
     const [isLoading, setIsLoading] = useState(true)
@@ -19,9 +19,9 @@ export const ChatForm = () => {
     }
 
     useEffect(() => {
-        getChat().then(() => {
+        getMessages().then(() => {
             if (chatId) {
-                getChatById(chatId)
+                getMessageById(chatId)
                     .then(chat => {
                         setChat(chat)
                         setIsLoading(false)
@@ -32,10 +32,10 @@ export const ChatForm = () => {
         })
     }, [])
 
-    const constructChatObject = () => {
+    const constructMessageObject = () => {
         setIsLoading(true)
         if (chatId) {
-            editChat({
+            editMessage({
                 id: chat.id,
                 userId: parseInt(localStorage.getItem("nutshell_customer")),
                 message: chat.messageInput
@@ -43,7 +43,7 @@ export const ChatForm = () => {
                 .then(() => history.push("/chats"))
         }
         else {
-            addChat({
+            addMessage({
                 userId: parseInt(localStorage.getItem("nutshell_customer")),
                 message: chat.messageInput
             })
@@ -65,9 +65,9 @@ export const ChatForm = () => {
             <button className="btn btn-primary"
                 disabled={isLoading}
                 onClick={event => {
-                    event.preventDefault() // Prevent browser from submitting the form
-                    constructChatObject()
+                    event.preventDefault()
+                    constructMessageObject()
                 }}>Submit Message</button>
         </form>
     )
-}
+};

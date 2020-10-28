@@ -19,8 +19,8 @@ export const ScoreCard = ({ scores }) => (
         <div className="score__round8">{scores.round8}</div>
         <div className="score__round9">{scores.round9}</div>
         <div className="score__total">{scores.total}</div>
-        <div className="score__time">{scores.startTime}</div>
-        <div className="score__time">{scores.endTime}</div>
+        <div className="score__startTime">{scores.startTime}</div>
+        <div className="score__endTime">{scores.endTime}</div>
         <div className="score__date">{scores.date}</div>
         <div className="score__user">ScoreCard By: {scores.user.username}</div>
     </section>

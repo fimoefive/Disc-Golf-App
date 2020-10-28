@@ -14,10 +14,10 @@ import { GameDetail } from "./Games/GameDetail";
 import { GameProvider } from "./Games/GameProvider";
 import { GameSearch } from "./Games/GameSearch";
 
-import { ChatProvider } from "./Chat/ChatProvider"
-import { ChatForm } from "./Chat/ChatForm"
-import { ChatList } from "./Chat/ChatList"
-import { ChatDetail } from "./Chat/ChatDetail"
+import { MessageProvider } from "./Messages/MessageProvider";
+import { MessageForm } from "./Messages/MessageForm";
+import { MessageList } from "./Messages/MessageList";
+import { MessageDetail } from "./Messages/MessageDetail";
 
 
 import { FollowerList } from "./Followers/FollowerList";
@@ -90,29 +90,29 @@ export const ApplicationViews = () => {
                 </Route>
             </GameProvider>
 
-            <ChatProvider>
+            <MessageProvider>
                 <Route exact path="/chats/create">
-                    <ChatForm />
+                    <MessageForm />
                 </Route>
-            </ChatProvider>
+            </MessageProvider>
 
-            <ChatProvider>
+            <MessageProvider>
                 <Route exact path="/chats/edit/:chatId(\d+)">
-                    <ChatForm />
+                    <MessageForm />
                 </Route>
-            </ChatProvider>
+            </MessageProvider>
 
-            <ChatProvider>
+            <MessageProvider>
                 <Route exact path="/chats">
-                    <ChatList />
+                    <MessageList />
                 </Route>
-            </ChatProvider>
+            </MessageProvider>
 
-            <ChatProvider>
+            <MessageProvider>
                 <Route exact path="/chats/detail/:chatId(\d+)">
-                    <ChatDetail />
+                    <MessageDetail />
                 </Route>
-            </ChatProvider>
+            </MessageProvider>
         </>
     )
 };

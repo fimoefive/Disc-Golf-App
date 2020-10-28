@@ -1,23 +1,23 @@
 import React, { useState, createContext } from "react"
 
-export const ChatContext = createContext()
+export const MessageContext = createContext()
 
-const getChatById = (id) => {
+const getMessageById = (id) => {
     return fetch(`http://localhost:8088/messages/${id}?_expand=user`)
         .then(res => res.json())
 }
 
-export const ChatProvider = (props) => {
+export const MessageProvider = (props) => {
     const [messages, setMessages] = useState([])
     const [searchTerms, setSearchTerms] = useState("")
 
-    const getChat = () => {
+    const getMessages = () => {
         return fetch("http://localhost:8088/messages")
             .then(res => res.json())
             .then(setMessages)
     }
 
-    const addChat = (chat) => {
+    const addMessage = (chat) => {
         return fetch("http://localhost:8088/messages", {
             method: "POST",
             headers: {
@@ -25,17 +25,17 @@ export const ChatProvider = (props) => {
             },
             body: JSON.stringify(chat)
         })
-            .then(getChat)
+            .then(getMessages)
     }
 
-    const deleteChat = (chatId) => {
+    const deleteMessage = (chatId) => {
         return fetch(`http://localhost:8088/messages/${chatId}`, {
             method: "DELETE"
         })
-            .then(getChat)
+            .then(getMessages)
     }
 
-    const editChat = chat => {
+    const editMessage = chat => {
         return fetch(`http://localhost:8088/messages/${chat.id}`, {
             method: "PUT",
             headers: {
@@ -43,15 +43,15 @@ export const ChatProvider = (props) => {
             },
             body: JSON.stringify(chat)
         })
-            .then(getChat)
+            .then(getMessages)
     }
 
     return (
-        <ChatContext.Provider value={{
-            messages, getChat, addChat, getChatById, deleteChat, editChat, searchTerms, setSearchTerms
+        <MessageContext.Provider value={{
+            messages, getMessages, addMessage, getMessageById, deleteMessage, editMessage, searchTerms, setSearchTerms
         }}>
             {props.children}
-        </ChatContext.Provider>
+        </MessageContext.Provider>
     )
-}
+};
 
