@@ -12,10 +12,10 @@ export const NavBar = (props) => {
                 <Link className="navbar__link" to="/chats">Messages</Link>
             </li>
             <li className="navbar__item">
-                <Link className="navbar__link" to="/Games">Games</Link>
+                <Link className="navbar__link" to="/Scores">Scores</Link>
             </li>
             <li className="navbar__item">
-                <Link className="navbar__link" to="/Scores">Scores</Link>
+                <Link className="navbar__link" to="/Games">Games</Link>
             </li>
             <li className="navbar__item">
                 <Link className="navbar__link" to="/ranks">Players Rank</Link>

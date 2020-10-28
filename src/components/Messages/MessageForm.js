@@ -6,7 +6,7 @@ import "./Message.css";
 export const MessageForm = () => {
     const { getMessages, getMessageById, editMessage, addMessage } = useContext(MessageContext)
 
-    const [chat, setChat] = useState({})
+    const [chat, setMessage] = useState({})
     const [isLoading, setIsLoading] = useState(true)
     const { chatId } = useParams()
     const history = useHistory()
@@ -15,7 +15,7 @@ export const MessageForm = () => {
         const newMessage = { ...chat }
 
         newMessage[event.target.name] = event.target.value
-        setChat(newMessage)
+        setMessage(newMessage)
     }
 
     useEffect(() => {
@@ -23,7 +23,7 @@ export const MessageForm = () => {
             if (chatId) {
                 getMessageById(chatId)
                     .then(chat => {
-                        setChat(chat)
+                        setMessage(chat)
                         setIsLoading(false)
                     })
             } else {
@@ -37,14 +37,14 @@ export const MessageForm = () => {
         if (chatId) {
             editMessage({
                 id: chat.id,
-                userId: parseInt(localStorage.getItem("nutshell_customer")),
+                userId: parseInt(localStorage.getItem("disc-app_user")),
                 message: chat.messageInput
             })
                 .then(() => history.push("/chats"))
         }
         else {
             addMessage({
-                userId: parseInt(localStorage.getItem("nutshell_customer")),
+                userId: parseInt(localStorage.getItem("disc-app_user")),
                 message: chat.messageInput
             })
                 .then(() => history.push("/chats"))
@@ -52,8 +52,8 @@ export const MessageForm = () => {
     }
 
     return (
-        <form className="chatForm" id="chatForm">
-            <h2 className="chatForm_title">{chatId ? "Edit Message" : "Add Message"}</h2>
+        <form className="messageForm" id="chatForm">
+            <h2 className="messageForm_title">{chatId ? "Edit Message" : "Add Message"}</h2>
             <fieldset>
                 <div className="form-group">
                     <input type="text" id="message" name="messageInput" title="title" required autoFocus className="form-control"

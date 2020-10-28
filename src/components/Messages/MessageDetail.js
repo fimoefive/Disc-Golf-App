@@ -4,25 +4,25 @@ import { MessageContext } from "./MessageProvider";
 import "./Message.css"
 
 export const MessageDetail = () => {
-    const { getChatById, deleteChat } = useContext(MessageContext)
-    const [chat, setChat] = useState({})
+    const { getMessageById, deleteMessage } = useContext(MessageContext)
+    const [chat, setMessage] = useState({})
     const history = useHistory();
     const { chatId } = useParams();
 
     useEffect(() => {
-        getChatById(chatId)
+        getMessageById(chatId)
             .then((response) => {
-                setChat(response)
+                setMessage(response)
             })
     }, [])
 
     return (
         <section className="chat">
             <h3 className="chat__message">{chat.message}</h3>
-            <div className="chat__userId">UserId: {chat.userId}</div>
+            <div className="chat__username">UserId: {chat.userId}</div>
             <button onClick={
                 () => {
-                    deleteChat(chat.id)
+                    deleteMessage(chat.id)
                         .then(() => {
                             history.push("/chats")
                         })
