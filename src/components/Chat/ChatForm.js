@@ -1,29 +1,29 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react"
+import { ChatContext } from "./ChatProvider"
 import { useHistory, useParams } from 'react-router-dom';
-import { ChatContext } from "./MessageProvider";
-import "./Message.css";
+import "./Chat.css"
 
-export const MessageForm = () => {
-    const { getMessage, getMessageById, editMessage, addMessage } = useContext(ChatContext)
+export const ChatForm = () => {
+    const { getChat, getChatById, editChat, addChat } = useContext(ChatContext)
 
-    const [message, setMessage] = useState({})
+    const [chat, setChat] = useState({})
     const [isLoading, setIsLoading] = useState(true)
     const { chatId } = useParams()
     const history = useHistory()
 
     const handleControlledInputChange = (event) => {
-        const newMessage = { ...message }
+        const newMessage = { ...chat }
 
         newMessage[event.target.name] = event.target.value
-        setMessage(newMessage)
+        setChat(newMessage)
     }
 
     useEffect(() => {
-        getMessage().then(() => {
+        getChat().then(() => {
             if (chatId) {
-                getMessageById(chatId)
+                getChatById(chatId)
                     .then(chat => {
-                        setMessage(chat)
+                        setChat(chat)
                         setIsLoading(false)
                     })
             } else {
@@ -32,22 +32,22 @@ export const MessageForm = () => {
         })
     }, [])
 
-    const constructMessageObject = () => {
+    const constructChatObject = () => {
         setIsLoading(true)
         if (chatId) {
-            editMessage({
-                id: message.id,
-                userId: parseInt(localStorage.getItem("disc-app_user")),
-                message: message.messageInput
+            editChat({
+                id: chat.id,
+                userId: parseInt(localStorage.getItem("nutshell_customer")),
+                message: chat.messageInput
             })
-                .then(() => history.push("/messages"))
+                .then(() => history.push("/chats"))
         }
         else {
-            addMessage({
-                userId: parseInt(localStorage.getItem("disc-app_user")),
-                message: message.messageInput
+            addChat({
+                userId: parseInt(localStorage.getItem("nutshell_customer")),
+                message: chat.messageInput
             })
-                .then(() => history.push("/messages"))
+                .then(() => history.push("/chats"))
         }
     }
 
@@ -59,15 +59,15 @@ export const MessageForm = () => {
                     <input type="text" id="message" name="messageInput" title="title" required autoFocus className="form-control"
                         placeholder="What's on your mind?"
                         onChange={handleControlledInputChange}
-                        defaultValue={message.messageInput} />
+                        defaultValue={chat.messageInput} />
                 </div>
             </fieldset>
             <button className="btn btn-primary"
                 disabled={isLoading}
                 onClick={event => {
                     event.preventDefault() // Prevent browser from submitting the form
-                    constructMessageObject()
+                    constructChatObject()
                 }}>Submit Message</button>
         </form>
     )
-};
+}

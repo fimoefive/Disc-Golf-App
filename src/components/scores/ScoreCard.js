@@ -12,6 +12,6 @@ export const ScoreCard = ({ scores }) => (
         <div className="score__time">{scores.time}</div>
         <div className="score__date">{scores.date}</div>
         <div className="score__description">{scores.description}</div>
-        <div className="score__user">Score by: {scores.user.username}</div>
+        {/* <div className="score__user">Score by: {scores.user.username}</div> */}
     </section>
 );

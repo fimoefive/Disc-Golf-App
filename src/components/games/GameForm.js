@@ -41,8 +41,8 @@ export const GameForm = () => {
                 editGame({
                     id: game.id,
                     title: game.title,
-                    summary: game.summary,
-                    URL: game.URL,
+                    score: game.score,
+                    course: game.course,
                     userId: parseInt(game.userId),
                     date: new Date()
                 })
@@ -51,8 +51,8 @@ export const GameForm = () => {
             else {
                 addGame({
                     title: game.title,
-                    summary: game.summary,
-                    URL: game.URL,
+                    score: game.score,
+                    course: game.course,
                     userId: parseInt(localStorage.getItem("disc-app_user")),
                     date: new Date()
                 })
@@ -75,20 +75,20 @@ export const GameForm = () => {
             </fieldset>
             <fieldset>
                 <div className="from-group">
-                    <label htmlFor="gameSummary">Game Summary</label>
-                    <input type="text" id="gameSummary" title="summary" required autoFocus className="from-control"
-                        placeholder="Summary"
+                    <label htmlFor="gameScore">Score Total</label>
+                    <input type="text" id="gameScore" title="score" required autoFocus className="from-control"
+                        placeholder="Score"
                         onChange={handleControlledInputChange}
-                        defaultValue={game.summary} />
+                        defaultValue={game.score} />
                 </div>
             </fieldset>
             <fieldset>
                 <div className="from-group">
-                    <label htmlFor="gameURL">Game Score</label>
-                    <input type="text" id="gameURL" title="URL" required autoFocus className="from-control"
-                        placeholder="URL"
+                    <label htmlFor="gameCourse">Course</label>
+                    <input type="text" id="gameCourse" title="course" required autoFocus className="from-control"
+                        placeholder="Course"
                         onChange={handleControlledInputChange}
-                        defaultValue={game.URL} />
+                        defaultValue={game.course} />
                 </div>
             </fieldset>
             <button className="btn btn-primary"

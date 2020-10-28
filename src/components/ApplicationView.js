@@ -14,11 +14,11 @@ import { GameDetail } from "./Games/GameDetail";
 import { GameProvider } from "./Games/GameProvider";
 import { GameSearch } from "./Games/GameSearch";
 
-import { MessageForm } from "./Messages/MessageForm";
-import { MessageList } from "./Messages/MessageList";
-import { MessageDetail } from "./Messages/MessageDetail";
-import { MessageProvider } from "./Messages/MessageProvider";
-import { MessageSearch } from "./Messages/MessageSearch";
+import { ChatProvider } from "./Chat/ChatProvider"
+import { ChatForm } from "./Chat/ChatForm"
+import { ChatList } from "./Chat/ChatList"
+import { ChatDetail } from "./Chat/ChatDetail"
+
 
 import { FollowerList } from "./Followers/FollowerList";
 import { FollowerProvider } from "./Followers/FollowerProvider";
@@ -90,30 +90,29 @@ export const ApplicationViews = () => {
                 </Route>
             </GameProvider>
 
-            <MessageProvider>
-                <Route exact path="/messages">
-                    <MessageList />
-                    <MessageSearch />
+            <ChatProvider>
+                <Route exact path="/chats/create">
+                    <ChatForm />
                 </Route>
-            </MessageProvider>
+            </ChatProvider>
 
-            <MessageProvider>
-                <Route exact path="/messages/create">
-                    <MessageForm />
+            <ChatProvider>
+                <Route exact path="/chats/edit/:chatId(\d+)">
+                    <ChatForm />
                 </Route>
-            </MessageProvider>
+            </ChatProvider>
 
-            <MessageProvider>
-                <Route exact path="/messages/edit/:chatId(\d+)">
-                    <MessageForm />
+            <ChatProvider>
+                <Route exact path="/chats">
+                    <ChatList />
                 </Route>
-            </MessageProvider>
+            </ChatProvider>
 
-            <MessageProvider>
-                <Route exact path="/messages/detail/:chatId(\d+)">
-                    <MessageDetail />
+            <ChatProvider>
+                <Route exact path="/chats/detail/:chatId(\d+)">
+                    <ChatDetail />
                 </Route>
-            </MessageProvider>
+            </ChatProvider>
         </>
     )
 };

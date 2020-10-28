@@ -9,10 +9,9 @@ export const GameCard = ({ games }) => (
         <Link to={`/games/detail/${games.id}`}>
             {games.title}
         </Link>
-        <div className="game_summary">{games.summary}</div>
-        <div className="game_url">{games.URL}</div>
+        <div className="game_score">{games.score}</div>
+        <div className="game_course">{games.course}</div>
         <div className="game__user">Posted by: {games.user.username}</div>
-
         <div className="game__date">At: {games.date?.split("T")[0]}</div>
     </section>
 );

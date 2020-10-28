@@ -24,14 +24,21 @@
       "id": 5,
       "email": "martin@me.com",
       "username": "Martin"
-
     }
   ],
   "scores": [
     {
-      "id":1,
+      "id": 1,
       "userId": 1,
       "title": "Game 1"
+    },
+    {
+      "id": 2,
+      "name": "VSC",
+      "time": "14:00",
+      "date": "2020-10-29",
+      "description": "WALK",
+      "userId": 5
     }
   ],
   "games": [
@@ -58,7 +65,14 @@
       "course": "Cedar Hill",
       "date": "9/7/2020",
       "score": "100"
-
+    },
+    {
+      "id": 4,
+      "title": "Round 3",
+      "score": "200",
+      "course": "Twin Rivers",
+      "userId": 5,
+      "date": "2020-10-28T00:41:33.135Z"
     }
   ],
   "followers": [
@@ -76,6 +90,16 @@
       "id": 3,
       "userId": 2,
       "activeUserId": 3
+    },
+    {
+      "userId": 1,
+      "activeUserId": 5,
+      "id": 5
+    },
+    {
+      "userId": 2,
+      "activeUserId": 5,
+      "id": 6
     }
   ],
   "messages": [
@@ -93,6 +117,11 @@
       "id": 3,
       "userId": 2,
       "message": "HI"
+    },
+    {
+      "userId": 5,
+      "message": "what time is it?",
+      "id": 4
     }
   ]
 }

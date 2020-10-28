@@ -1,18 +1,17 @@
-import React, { useContext, useEffect, useState } from "react";
-import { useHistory } from "react-router-dom";
-import { ChatContext } from "./MessageProvider";
-import { MessageCard } from "./MessageCard";
-import "./Message.css";
+import React, { useContext, useEffect, useState } from "react"
+import { ChatContext } from "./ChatProvider"
+import { ChatCard } from "./ChatCard"
+import "./Chat.css"
+import { useHistory } from "react-router-dom"
 
-
-export const MessageList = () => {
-    const { messages, getMessage, searchTerms } = useContext(ChatContext)
+export const ChatList = () => {
+    const { messages, getChat, searchTerms } = useContext(ChatContext)
     const [filteredMessages, setFiltered] = useState([])
     const history = useHistory()
 
     // Empty dependency array - useEffect only runs after first render
     useEffect(() => {
-        getMessage()
+        getChat()
     }, [])
 
     // useEffect dependency array with dependencies - will run if dependency changes (state)
@@ -29,16 +28,16 @@ export const MessageList = () => {
     return (
         <>
             <h1>Messages</h1>
-            <button onClick={() => { history.push("/messages/create") }}>
+            <button onClick={() => { history.push("/chats/create") }}>
                 Add Message
             </button>
             <div className="chats">
                 {
                     filteredMessages.map(chat => {
-                        return <MessageCard key={chat.id} chat={chat} />
+                        return <ChatCard key={chat.id} chat={chat} />
                     })
                 }
             </div>
         </>
     )
-};
+}
