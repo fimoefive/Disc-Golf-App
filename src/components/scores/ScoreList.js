@@ -1,15 +1,14 @@
 import React, { useContext, useEffect, useState } from "react";
 import { useHistory } from "react-router-dom";
-import { EventContext } from "./ScoreProvider";
+import { ScoreContext } from "./ScoreProvider";
 import { ScoreCard } from "./ScoreCard";
 import "./Score.css";
 
 export const ScoreList = () => {
-    // This state changes when `getEvent()` is invoked below
-    const { scores, getScores, searchTerms } = useContext(EventContext)
+
+    const { scores, getScores, searchTerms } = useContext(ScoreContext)
     const [filteredScores, setFilteredScores] = useState([])
 
-    //useEffect - reach out to the world for something
     useEffect(() => {
         getScores()
     }, [])

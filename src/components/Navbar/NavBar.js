@@ -6,7 +6,7 @@ export const NavBar = (props) => {
     return (
         <ul className="navbar">
             <li className="navbar__item active">
-                <Link className="navbar__link" to="/">Disc-Golf-App</Link>
+                <Link className="navbar__link" to="/">Main</Link>
             </li>
             <li className="navbar__item">
                 <Link className="navbar__link" to="/chats">Messages</Link>

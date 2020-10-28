@@ -1,11 +1,11 @@
 import React, { useContext, useEffect, useState } from "react";
 import { useHistory, useParams } from "react-router-dom";
-import { EventContext } from "./ScoreProvider";
+import { ScoreContext } from "./ScoreProvider";
 import "./Score.css";
 
 
 export const ScoreForm = () => {
-    const { addScore, getScores, getScoreById, editScore } = useContext(EventContext)
+    const { addScore, getScores, getScoreById, editScore } = useContext(ScoreContext)
 
     //for edit, hold on to state of event in this view
     const [score, setScore] = useState({})

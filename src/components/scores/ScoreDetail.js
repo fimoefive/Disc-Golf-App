@@ -1,11 +1,11 @@
 import React, { useContext, useEffect, useState } from "react";
 import { useParams, useHistory } from "react-router-dom";
-import { EventContext } from "./ScoreProvider";
+import { ScoreContext } from "./ScoreProvider";
 import "./Score.css";
 
 
 export const ScoreDetail = () => {
-    const { getScoreById, deleteScore } = useContext(EventContext)
+    const { getScoreById, deleteScore } = useContext(ScoreContext)
 
     const [score, setScore] = useState();
 
@@ -31,8 +31,8 @@ export const ScoreDetail = () => {
         <section className="score">
             <h3 className="score__name">{score?.name}</h3>
             <div className="score__round">{score?.round}</div>
-            <div className="score__round2">{score?.round2}</div>
-            <div className="score__round3">{score?.round3}</div>
+            <div className="score__round2">{score?.round}</div>
+            <div className="score__round3">{score?.roundThree}</div>
             <div className="score__round4">{score?.round4}</div>
             <div className="score__round5">{score?.round5}</div>
             <div className="score__round6">{score?.round6}</div>

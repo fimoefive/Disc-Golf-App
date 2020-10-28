@@ -43,7 +43,7 @@
       "userId": 1,
       "title": "Game 1",
       "course": "Shelby Bottoms",
-      "date": "8/10/2020",
+      "date": "10/10/2020",
       "score": "184"
     },
     {
@@ -51,7 +51,7 @@
       "userId": 1,
       "title": "Game 2",
       "course": "Seven Oaks",
-      "date": "8/19/2020",
+      "date": "10/19/2020",
       "score": "91"
     },
     {
@@ -59,12 +59,12 @@
       "userId": 1,
       "title": "Game 3",
       "course": "Cedar Hill",
-      "date": "9/7/2020",
+      "date": "10/7/2020",
       "score": "100"
     },
     {
       "id": 4,
-      "title": "Round 3",
+      "title": "Game 4",
       "score": "200",
       "course": "Twin Rivers",
       "userId": 5,

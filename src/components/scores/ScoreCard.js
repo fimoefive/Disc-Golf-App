@@ -10,8 +10,8 @@ export const ScoreCard = ({ scores }) => (
             {scores.name}
         </Link>
         <div className="score__round">Round One: {scores.round}</div>
-        <div className="score__round2">Round Two: {scores.round}</div>
-        <div className="score__round3">Round Three: {scores.round}</div>
+        <div className="score__round2">Round Two: {scores.round2}</div>
+        <div className="score__round3">Round Three: {scores.roundThree}</div>
         <div className="score__round4">Round Four: {scores.round}</div>
         <div className="score__round5">Round Five: {scores.round}</div>
         <div className="score__round6">Round Six: {scores.round}</div>

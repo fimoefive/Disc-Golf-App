@@ -1,9 +1,9 @@
 import React, { useContext, useEffect } from "react";
-import { EventContext } from "./ScoreProvider";
+import { ScoreContext } from "./ScoreProvider";
 import "./Score.css";
 
 export const ScoreSearch = () => {
-    const { setSearchTerms } = useContext(EventContext)
+    const { setSearchTerms } = useContext(ScoreContext)
 
     useEffect(() => {
         setSearchTerms("")

@@ -1,6 +1,6 @@
 import React, { useState, createContext } from 'react';
 
-export const EventContext = createContext();
+export const ScoreContext = createContext();
 
 export const ScoreProvider = (props) => {
     const [scores, setScores] = useState([]);
@@ -46,10 +46,10 @@ export const ScoreProvider = (props) => {
     };
 
     return (
-        <EventContext.Provider value={{
+        <ScoreContext.Provider value={{
             scores, getScores, addScore, deleteScore, editScore, getScoreById, setSearchTerms, searchTerms
         }}>
             {props.children}
-        </EventContext.Provider>
+        </ScoreContext.Provider>
     )
 };
