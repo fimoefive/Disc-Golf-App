@@ -7,20 +7,16 @@ import "./Score.css";
 export const ScoreForm = () => {
     const { addScore, getScores, getScoreById, editScore } = useContext(ScoreContext)
 
-    //for edit, hold on to state of event in this view
     const [score, setScore] = useState({})
-    //wait for data before button is active
     const [isLoading, setIsLoading] = useState(true);
     const { scoreId } = useParams();
     const history = useHistory();
 
-    //when field changes, update state. This causes a re-render and updates the view.
     const handleControlledInputChange = (e) => {
 
         const newEvent = { ...score }
-        //set the property to the new value
         newEvent[e.target.name] = e.target.value
-        //updates state
+
         setScore(newEvent)
     }
 
@@ -30,7 +26,6 @@ export const ScoreForm = () => {
                 getScoreById(scoreId)
                     .then(event => {
                         setScore(event)
-                        // console.log(score);
                         setIsLoading(false)
                     })
             } else {
@@ -43,10 +38,8 @@ export const ScoreForm = () => {
         if (parseInt(score.name) === 0) {
             window.alert("Please select an event")
         } else {
-            //disable the button - no extra clicks
             setIsLoading(true);
             if (scoreId) {
-                //PUT - update
                 editScore({
                     id: score.id,
                     name: score.name,
@@ -67,7 +60,6 @@ export const ScoreForm = () => {
                 })
                     .then(() => history.push("/scores"))
             } else {
-                //POST - add
                 addScore({
                     name: score.name,
                     round: score.round,
@@ -227,7 +219,7 @@ export const ScoreForm = () => {
                 className="btn btn-primary"
                 disabled={isLoading}
                 onClick={e => {
-                    e.preventDefault() // Prevent browser from submitting the form
+                    e.preventDefault()
                     constructEventObject()
                 }}>
                 {scoreId ? "Save Score" : "Create Score"}</button>
