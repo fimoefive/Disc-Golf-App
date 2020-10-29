@@ -28,6 +28,7 @@
   ],
   "scores": [
     {
+      "id": 3,
       "name": "Second Game Card",
       "round": "3",
       "round2": "5",
@@ -39,11 +40,10 @@
       "round8": "3",
       "round9": "3",
       "total": 0,
-      "startTime": "14:00",
+      "startTime": "14:30",
       "endTime": "16:00",
       "date": "2020-10-10",
-      "userId": 5,
-      "id": 3
+      "userId": 5
     },
     {
       "name": "Third Game",
@@ -90,28 +90,20 @@
       "score": "100"
     },
     {
-      "id": 4,
-      "title": "Game 4",
-      "score": "200",
+      "id": 5,
+      "title": "Saturday Game",
+      "score": "186",
       "courseId": 4,
       "userId": 5,
-      "date": "2020-10-28T00:41:33.135Z"
+      "date": "2020-10-29T18:55:59.552Z"
     },
     {
-      "title": "Saturday Game",
-      "score": "188",
-      "courseId": null,
-      "userId": 5,
-      "date": "2020-10-28T23:06:55.865Z",
-      "id": 5
-    },
-    {
+      "id": 6,
       "title": "Friday Game",
-      "score": "190",
-      "courseId": null,
+      "score": "195",
+      "courseId": 6,
       "userId": 5,
-      "date": "2020-10-29T14:42:12.028Z",
-      "id": 6
+      "date": "2020-10-29T19:00:20.226Z"
     }
   ],
   "followers": [
@@ -160,7 +152,7 @@
     {
       "id": 3,
       "userId": 2,
-      "message": "HI"
+      "message": "HOlla!"
     },
     {
       "userId": 5,
@@ -175,7 +167,7 @@
     },
     {
       "id": 2,
-      "name": "Twin Rivers"
+      "name": "Two Rivers"
     },
     {
       "id": 3,
@@ -208,6 +200,10 @@
     {
       "id": 10,
       "name": "Cottonwood"
+    },
+    {
+      "id": 11,
+      "name": "WhiteHouse"
     }
   ]
 }

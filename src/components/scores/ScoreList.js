@@ -18,7 +18,6 @@ export const ScoreList = () => {
     useEffect(() => {
         if (searchTerms !== "") {
             const subset = scores.filter(score => score.name.includes(searchTerms.trim()))
-            console.log(scores)
             setFilteredScores(subset)
         } else {
             setFilteredScores(scores)

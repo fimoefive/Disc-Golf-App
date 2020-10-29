@@ -6,7 +6,6 @@ import { CourseContext } from "../Courses/CourseProvider";
 export const GameForm = (props) => {
     const { getGames, getGameById, editGame, addGame } = useContext(GameContext)
     const { courses, getCourses } = useContext(CourseContext);
-    const { course, setCourse } = useState({});
     const [game, setGame] = useState({})
     const [isLoading, setIsLoading] = useState(true)
     const { gameId } = useParams()
@@ -32,7 +31,8 @@ export const GameForm = (props) => {
             }
         })
     }, [])
-    console.log(courses);
+
+
     useEffect(() => {
         getCourses().then(() => {
             if (editMode) {
@@ -45,7 +45,6 @@ export const GameForm = (props) => {
             }
         })
     }, []);
-
 
     const constructGameObject = () => {
         if (parseInt(game.title) === 0) {
@@ -103,7 +102,7 @@ export const GameForm = (props) => {
                     <label htmlFor="course">Choose Course: </label>
                     <select
                         value={game.courseId}
-                        title="course"
+                        title="courseId"
                         id="gameCourse"
                         className="form-control"
                         onChange={handleControlledInputChange}

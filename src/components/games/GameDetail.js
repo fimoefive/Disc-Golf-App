@@ -18,6 +18,7 @@ export const GameDetail = () => {
 
 
     useEffect(() => {
+
         getGameById(gameId)
             .then((response) => {
                 setGame(response)
@@ -31,9 +32,9 @@ export const GameDetail = () => {
         <section className="game">
             <h3 className="game__name">{game?.title}</h3>
             <div className="game__score">{game?.score}</div>
-            <div className="game__course">{game?.course}</div>
+            <div className="game__course">{game?.course.name}</div>
             <div className="game__date">Posted on: {game?.date.split("T")[0]}</div>
-            <div className="game__user">Posted by: {game?.user.username}</div>
+            <div className="game__user">Posted by: {game?.user?.username}</div>
             <button
                 hidden={!owned}
                 onClick={

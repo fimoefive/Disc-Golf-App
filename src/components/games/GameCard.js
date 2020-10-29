@@ -10,7 +10,7 @@ export const GameCard = ({ games }) => (
             {games.title}
         </Link>
         <div className="game_score">Total Score: {games.score}</div>
-        <div className="game_course">Course: {games.course}</div>
+        <div className="game__course">Course: {games.course.name}</div>
         <div className="game__user">Posted by: {games.user.username}</div>
         <div className="game__date">Date: {games.date?.split("T")[0]}</div>
     </section>
