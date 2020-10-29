@@ -30,8 +30,8 @@ export const GameDetail = () => {
     return (
         <section className="game">
             <h3 className="game__name">{game?.title}</h3>
-            <div className="game__summary">{game?.score}</div>
-            <div className="game__URL">{game?.course}</div>
+            <div className="game__score">{game?.score}</div>
+            <div className="game__course">{game?.course}</div>
             <div className="game__date">Posted on: {game?.date.split("T")[0]}</div>
             <div className="game__user">Posted by: {game?.user.username}</div>
             <button

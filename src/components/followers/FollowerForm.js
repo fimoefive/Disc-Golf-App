@@ -67,7 +67,7 @@ export const FollowerForm = () => {
             <button className="btn btn-primary"
                 disabled={isLoading}
                 onClick={event => {
-                    event.preventDefault() // Prevent browser from submitting the form
+                    event.preventDefault()
                     constructFollowerObject()
                 }}>Save Follower</button>
         </form>

@@ -14,6 +14,8 @@ import { GameDetail } from "./Games/GameDetail";
 import { GameProvider } from "./Games/GameProvider";
 import { GameSearch } from "./Games/GameSearch";
 
+import { CourseProvider } from "./Courses/CourseProvider";
+
 import { MessageProvider } from "./Messages/MessageProvider";
 import { MessageForm } from "./Messages/MessageForm";
 import { MessageList } from "./Messages/MessageList";
@@ -24,7 +26,7 @@ import { FollowerList } from "./Followers/FollowerList";
 import { FollowerProvider } from "./Followers/FollowerProvider";
 import { FollowerForm } from "./Followers/FollowerForm";
 
-export const ApplicationViews = () => {
+export const ApplicationViews = (props) => {
     return (
         <>
             <FollowerProvider>
@@ -79,15 +81,20 @@ export const ApplicationViews = () => {
             </GameProvider>
 
             <GameProvider>
-                <Route exact path="/games/create">
-                    <GameForm />
-                </Route>
+                <CourseProvider>
+                    <Route exact path="/games/create"
+                        render={(props) => <GameForm {...props} />}>
+                    </Route>
+                </CourseProvider>
             </GameProvider>
 
             <GameProvider>
-                <Route exact path="/games/edit/:gameId(\d+)">
-                    <GameForm />
-                </Route>
+                <CourseProvider>
+                    <Route exact path="/games/edit/:gameId(\d+)"
+                        render={(props) => <GameForm {...props} />}>
+
+                    </Route>
+                </CourseProvider>
             </GameProvider>
 
             <MessageProvider>

@@ -1,11 +1,12 @@
 import React, { useContext, useEffect, useState } from "react";
 import { useHistory, useParams } from "react-router-dom";
 import { GameContext } from "../Games/GameProvider";
+import { CourseContext } from "../Courses/CourseProvider";
 
-
-export const GameForm = () => {
+export const GameForm = (props) => {
     const { getGames, getGameById, editGame, addGame } = useContext(GameContext)
-
+    const { courses, getCourses } = useContext(CourseContext);
+    const { course, setCourse } = useState({});
     const [game, setGame] = useState({})
     const [isLoading, setIsLoading] = useState(true)
     const { gameId } = useParams()
@@ -16,10 +17,11 @@ export const GameForm = () => {
         newGame[event.target.title] = event.target.value
         setGame(newGame)
     }
+    const editMode = props.match.params.hasOwnProperty("gameId");
 
     useEffect(() => {
         getGames().then(() => {
-            if (gameId) {
+            if (editMode) {
                 getGameById(gameId)
                     .then(game => {
                         setGame(game)
@@ -30,6 +32,20 @@ export const GameForm = () => {
             }
         })
     }, [])
+    console.log(courses);
+    useEffect(() => {
+        getCourses().then(() => {
+            if (editMode) {
+                getGameById(gameId).then(game => {
+                    setGame(game);
+                    setIsLoading(false);
+                });
+            } else {
+                setIsLoading(false);
+            }
+        })
+    }, []);
+
 
     const constructGameObject = () => {
         if (parseInt(game.title) === 0) {
@@ -42,7 +58,7 @@ export const GameForm = () => {
                     id: game.id,
                     title: game.title,
                     score: game.score,
-                    course: game.course,
+                    courseId: parseInt(game.courseId),
                     userId: parseInt(game.userId),
                     date: new Date()
                 })
@@ -52,7 +68,7 @@ export const GameForm = () => {
                 addGame({
                     title: game.title,
                     score: game.score,
-                    course: game.course,
+                    courseId: parseInt(game.courseId),
                     userId: parseInt(localStorage.getItem("disc-app_user")),
                     date: new Date()
                 })
@@ -83,18 +99,28 @@ export const GameForm = () => {
                 </div>
             </fieldset>
             <fieldset>
-                <div className="from-group">
-                    <label htmlFor="gameCourse">Course</label>
-                    <input type="text" id="gameCourse" title="course" required autoFocus className="from-control"
-                        placeholder="Course"
+                <div className="form-group">
+                    <label htmlFor="course">Choose Course: </label>
+                    <select
+                        value={game.courseId}
+                        title="course"
+                        id="gameCourse"
+                        className="form-control"
                         onChange={handleControlledInputChange}
-                        defaultValue={game.course} />
+                    >
+                        <option value="0">Select a course</option>
+                        {courses.map(c => (
+                            <option key={c.id} value={c.id}>
+                                {c.name}
+                            </option>
+                        ))}
+                    </select>
                 </div>
             </fieldset>
             <button className="btn btn-primary"
                 disabled={isLoading}
                 onClick={event => {
-                    event.preventDefault() // Prevent browser from submitting the form
+                    event.preventDefault()
                     constructGameObject()
                 }}>
                 {gameId ? "Save Game" : "Create Game"}</button>
