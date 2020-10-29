@@ -28,14 +28,6 @@
   ],
   "scores": [
     {
-      "id": 2,
-      "name": "First Card",
-      "round": "Par 6",
-      "total": "36",
-      "date": "2020-10-27",
-      "userId": 5
-    },
-    {
       "name": "Second Game Card",
       "round": "3",
       "round2": "5",
@@ -52,6 +44,24 @@
       "date": "2020-10-10",
       "userId": 5,
       "id": 3
+    },
+    {
+      "name": "Third Game",
+      "round": "3",
+      "round2": "5",
+      "round3": "6",
+      "round4": "3",
+      "round5": "5",
+      "round6": "4",
+      "round7": "5",
+      "round8": "6",
+      "round9": "3",
+      "total": 0,
+      "startTime": "15:00",
+      "endTime": "16:00",
+      "date": "2020-10-17",
+      "userId": 5,
+      "id": 4
     }
   ],
   "games": [
@@ -94,6 +104,14 @@
       "userId": 5,
       "date": "2020-10-28T23:06:55.865Z",
       "id": 5
+    },
+    {
+      "title": "Friday Game",
+      "score": "190",
+      "courseId": null,
+      "userId": 5,
+      "date": "2020-10-29T14:42:12.028Z",
+      "id": 6
     }
   ],
   "followers": [

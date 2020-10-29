@@ -4,7 +4,7 @@ import { ScoreContext } from "./ScoreProvider";
 import "./Score.css";
 
 
-export const ScoreForm = () => {
+export const ScoreForm = (props) => {
     const { addScore, getScores, getScoreById, editScore } = useContext(ScoreContext)
 
     const [score, setScore] = useState({})
@@ -17,7 +17,6 @@ export const ScoreForm = () => {
 
         const newScore = { ...score }
         newScore[e.target.name] = e.target.value
-
         setScore(newScore)
     }
 
@@ -35,20 +34,20 @@ export const ScoreForm = () => {
         })
     }, [])
 
-    useEffect(() => {
-        getScores().then(() => {
-            if (scoreId) {
-                getScoreById(scoreId)
+    // useEffect(() => {
+    //     getScores().then(() => {
+    //         if (scoreId) {
+    //             getScoreById(scoreId)
 
-                    .then(score => {
-                        setTotal(score)
-                        setIsLoading(false)
-                    })
-            } else {
-                setIsLoading(false)
-            }
-        })
-    }, [score])
+    //                 .then(score => {
+    //                     setTotal(score)
+    //                     setIsLoading(false)
+    //                 })
+    //         } else {
+    //             setIsLoading(false)
+    //         }
+    //     })
+    // }, [score])
     // console.log("the score change");
 
     const constructScoreCardObject = () => {
