@@ -19,7 +19,7 @@ export const MessageDetail = () => {
     return (
         <section className="chat">
             <h3 className="chat__message">{chat.message}</h3>
-            <div className="chat__username">UserId: {chat.userId}</div>
+            <div className="chat__username">Posted By: {chat?.user?.username}</div>
             <button onClick={
                 () => {
                     deleteMessage(chat.id)
