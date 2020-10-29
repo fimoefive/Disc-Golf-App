@@ -2,19 +2,19 @@ import React, { useState, createContext } from "react";
 
 export const MessageContext = createContext()
 
-const getMessageById = (id) => {
-    return fetch(`http://localhost:8088/messages/${id}?_expand=user`)
-        .then(res => res.json())
-}
-
 export const MessageProvider = (props) => {
     const [messages, setMessages] = useState([])
     const [searchTerms, setSearchTerms] = useState("")
 
     const getMessages = () => {
-        return fetch("http://localhost:8088/messages")
+        return fetch("http://localhost:8088/messages?_expand=user")
             .then(res => res.json())
             .then(setMessages)
+    }
+
+    const getMessageById = (id) => {
+        return fetch(`http://localhost:8088/messages/${id}?_expand=user`)
+            .then(res => res.json())
     }
 
     const addMessage = (chat) => {
