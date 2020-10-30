@@ -21,7 +21,7 @@ export const RankProvider = (props) => {
     }
     console.log(games)
 
-    var users = []
+    const users = []
     for (i = 0; i < games.length; i++) {
         if (users.indexOf(games[i].userId) === -1) {
             users.push(games[i].userId)
@@ -59,7 +59,7 @@ export const RankProvider = (props) => {
     return (
         <RankContext.Provider value={{
             games, getGames, setSearchTerms, searchTerms, average,
-            getGameById, getAverageScore
+            getGameById, getAverageScore, setAverageScore
         }}>
             {props.children}
         </RankContext.Provider>
