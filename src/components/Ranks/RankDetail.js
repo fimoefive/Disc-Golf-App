@@ -1,11 +1,11 @@
 import React, { useContext, useEffect, useState } from "react";
 import { useParams, useHistory } from "react-router-dom";
-import { GameContext } from "./GameProvider";
-import "./Game.css";
+import { RankContext } from "./RankProvider";
+import "./Rank.css";
 
 
-export const GameDetail = () => {
-    const { deleteGame, getGameById } = useContext(GameContext)
+export const RankDetail = () => {
+    const { deleteGame, getGameById } = useContext(RankContext)
 
     const [game, setGame] = useState();
 
@@ -30,9 +30,9 @@ export const GameDetail = () => {
 
     return (
         <section className="game">
-            <h3 className="game__name">Title: {game?.title}</h3>
-            <div className="game__score">Total: {game?.score}</div>
-            <div className="game__course">Course: {game?.course.name}</div>
+            <h3 className="game__name">{game?.title}</h3>
+            <div className="game__score">{game?.score}</div>
+            <div className="game__course">{game?.course.name}</div>
             <div className="game__date">Posted on: {game?.date.split("T")[0]}</div>
             <div className="game__user">Posted by: {game?.user?.username}</div>
             <button

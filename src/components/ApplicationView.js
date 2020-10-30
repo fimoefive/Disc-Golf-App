@@ -14,6 +14,12 @@ import { GameDetail } from "./Games/GameDetail";
 import { GameProvider } from "./Games/GameProvider";
 import { GameSearch } from "./Games/GameSearch";
 
+import { RankForm } from "./Ranks/RankForm";
+import { RankList } from "./Ranks/RankList";
+import { RankDetail } from "./Ranks/RankDetail";
+import { RankProvider } from "./Ranks/RankProvider";
+import { RankSearch } from "./Ranks/RankSearch";
+
 import { CourseProvider } from "./Courses/CourseProvider";
 
 import { MessageProvider } from "./Messages/MessageProvider";
@@ -96,6 +102,34 @@ export const ApplicationViews = (props) => {
                     </Route>
                 </CourseProvider>
             </GameProvider>
+
+            <RankProvider>
+                <Route exact path="/ranks">
+                    <RankSearch />
+                    <RankList />
+
+                </Route>
+            </RankProvider>
+
+            {/* <RankProvider>
+
+                <Route exact path="/ranks/create"
+                    render={(props) => <RankForm {...props} />}>
+                </Route>
+            </RankProvider> */}
+
+            {/* <RankProvider>
+                <Route exact path="/ranks/detail/:gameId(\d+)">
+                    <RankDetail />
+                </Route>
+            </RankProvider> */}
+
+            {/* <RankProvider>
+                <Route exact path="/ranks/edit/:gameId(\d+)"
+                    render={(props) => <RankForm {...props} />}>
+
+                </Route>
+            </RankProvider> */}
 
             <MessageProvider>
                 <Route exact path="/chats/create">

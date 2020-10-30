@@ -30,18 +30,18 @@ export const ScoreDetail = () => {
     return (
         <section className="score">
             <h3 className="score__name">{score?.name}</h3>
-            <div className="score__round">{score?.round}</div>
-            <div className="score__round2">{score?.round2}</div>
-            <div className="score__round3">{score?.round3}</div>
-            <div className="score__round4">{score?.round4}</div>
-            <div className="score__round5">{score?.round5}</div>
-            <div className="score__round6">{score?.round6}</div>
-            <div className="score__round7">{score?.round7}</div>
-            <div className="score__round8">{score?.round8}</div>
-            <div className="score__round9">{score?.round9}</div>
-            <div className="score__total">{score?.total}</div>
-            <div className="score__startTime">{score?.startTime}</div>
-            <div className="score__endTime">{score?.endTime}</div>
+            <div className="score__round">Round One: {score?.round}</div>
+            <div className="score__round2">Round Two: {score?.round2}</div>
+            <div className="score__round3">Round Three {score?.round3}</div>
+            <div className="score__round4">Round Four: {score?.round4}</div>
+            <div className="score__round5">Round Five: {score?.round5}</div>
+            <div className="score__round6">Round Six: {score?.round6}</div>
+            <div className="score__round7">Round Seven: {score?.round7}</div>
+            <div className="score__round8">Round Eight: {score?.round8}</div>
+            <div className="score__round9">Round Nine: {score?.round9}</div>
+            <div className="score__total">Total Score: {score?.total}</div>
+            <div className="score__startTime">Start Time: {score?.startTime}</div>
+            <div className="score__endTime">End Time: {score?.endTime}</div>
             <div className="score__date">Posted on: {score?.date}</div>
             <div className="score__user">Posted by: {score?.user.username}</div>
 
