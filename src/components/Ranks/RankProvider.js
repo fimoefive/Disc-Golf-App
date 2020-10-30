@@ -12,6 +12,10 @@ export const RankProvider = (props) => {
             .then(response => response.json())
             .then(setGames)
     }
+    const getGameById = (id) => {
+        return fetch(`http://localhost:8088/games/${id}?_expand=user&_expand=course`)
+            .then(response => response.json())
+    }
     const getAverageScore = () => {
         return games
     }
@@ -52,43 +56,10 @@ export const RankProvider = (props) => {
 
     }
 
-
-    /*const addGame = (x) => {
-        return fetch(`http://localhost:8088/games`, {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify(x)
-        })
-            .then(getGames)
-    }
-    const getGameById = (id) => {
-        return fetch(`http://localhost:8088/games/${id}?_expand=user&_expand=course`)
-            .then(response => response.json())
-    }
-
-    const deleteGame = gameId => {
-        return fetch(`http://localhost:8088/games/${gameId}`, {
-            method: "DELETE"
-        })
-    }
-
-    const editGame = game => {
-        return fetch(`http://localhost:8088/games/${game.id}`, {
-            method: "PUT",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify(game)
-        })
-            .then(getGames)
-    }*/
-
     return (
         <RankContext.Provider value={{
-            games, getGames, setSearchTerms, searchTerms, average
-            // , editGame, deleteGame, addGame, getGameById, 
+            games, getGames, setSearchTerms, searchTerms, average,
+            getGameById, getAverageScore
         }}>
             {props.children}
         </RankContext.Provider>

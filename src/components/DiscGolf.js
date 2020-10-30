@@ -2,6 +2,8 @@ import React from "react";
 import { Route, Redirect } from "react-router-dom";
 import { ApplicationViews } from "./ApplicationView";
 import { Login } from "./Auth/Login";
+// import { Logout } from "./Auth/Logout";
+
 import { Register } from "./Auth/Register";
 import { NavBar } from "./NavBar/NavBar";
 import "./DiscGolf.css";
@@ -22,7 +24,9 @@ export const DiscApp = () => (
                 }
             }}
         />
-
+        {/* <Route exact path="/logout">
+            <Logout />
+        </Route> */}
         <Route exact path="/login">
             <Login />
         </Route>

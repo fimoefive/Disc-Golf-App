@@ -46,6 +46,7 @@
       "userId": 5
     },
     {
+      "id": 4,
       "name": "Third Game",
       "round": "3",
       "round2": "5",
@@ -60,8 +61,7 @@
       "startTime": "15:00",
       "endTime": "16:00",
       "date": "2020-10-17",
-      "userId": 4,
-      "id": 4
+      "userId": 4
     }
   ],
   "games": [
@@ -104,6 +104,14 @@
       "courseId": 6,
       "userId": 5,
       "date": "2020-10-29T19:00:20.226Z"
+    },
+    {
+      "title": "Sunday Game",
+      "score": "200",
+      "courseId": 5,
+      "userId": 4,
+      "date": "2020-10-30T19:02:42.115Z",
+      "id": 7
     }
   ],
   "followers": [
@@ -151,6 +159,11 @@
       "userId": 2,
       "activeUserId": 4,
       "id": 10
+    },
+    {
+      "userId": 1,
+      "activeUserId": 4,
+      "id": 11
     }
   ],
   "messages": [
