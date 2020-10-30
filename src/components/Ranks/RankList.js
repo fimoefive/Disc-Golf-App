@@ -22,7 +22,7 @@ export const RankList = () => {
 
     return (
         <>
-            <h2>Player Ranks</h2>
+            <h2>Players Rank</h2>
             <div className="ranks">
                 {
                     filteredGames.map(game => {

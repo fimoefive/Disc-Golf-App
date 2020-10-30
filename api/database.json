@@ -147,16 +147,16 @@
     {
       "id": 2,
       "userId": 4,
-      "message": "hey man"
+      "message": "OKAY"
     },
     {
       "id": 3,
       "userId": 2,
-      "message": "HOlla!"
+      "message": "HI There!"
     },
     {
       "userId": 5,
-      "message": "what time is it?",
+      "message": "What time is it?",
       "id": 4
     }
   ],
