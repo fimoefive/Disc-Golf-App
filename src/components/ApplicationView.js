@@ -1,6 +1,7 @@
 import React from "react";
 import { Route } from "react-router-dom";
 import { Home } from "./Home";
+import { Logout } from "./Auth/Logout"
 
 import { ScoreForm } from "./Scores/ScoreForm";
 import { ScoreList } from "./Scores/ScoreList";
@@ -124,13 +125,6 @@ export const ApplicationViews = (props) => {
                 </Route>
             </RankProvider> */}
 
-            {/* <RankProvider>
-                <Route exact path="/ranks/edit/:gameId(\d+)"
-                    render={(props) => <RankForm {...props} />}>
-
-                </Route>
-            </RankProvider> */}
-
             <MessageProvider>
                 <Route exact path="/chats/create">
                     <MessageForm />
@@ -154,6 +148,10 @@ export const ApplicationViews = (props) => {
                     <MessageDetail />
                 </Route>
             </MessageProvider>
+
+            <Route exact path="/logout">
+                <Logout />
+            </Route>
         </>
     )
 };

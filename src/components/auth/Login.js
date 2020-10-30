@@ -33,16 +33,16 @@ export const Login = props => {
     return (
         <main className="container--login">
             <dialog className="dialog dialog--auth" ref={existDialog}>
-                <div>User does not exist</div>
+                <div>Player does not exist</div>
                 <button className="button--close" onClick={e => existDialog.current.close()}>Close</button>
             </dialog>
 
             <section>
                 <form className="form--login" onSubmit={handleLogin}>
-                    <h1>Disc-golf-App</h1>
+                    <h1>Disc Golf Application</h1>
                     <h2>Please sign in</h2>
                     <fieldset>
-                        <label htmlFor="inputUsername"> Username </label>
+                        <label htmlFor="inputUsername"> Player Name </label>
                         <input ref={username} type="username"
                             id="username"
                             className="form-control"
@@ -50,7 +50,7 @@ export const Login = props => {
                             required autoFocus />
                     </fieldset>
                     <fieldset>
-                        <label htmlFor="inputEmail"> Email address </label>
+                        <label htmlFor="inputEmail"> Email Address </label>
                         <input ref={email} type="email"
                             id="email"
                             className="form-control"
@@ -65,7 +65,7 @@ export const Login = props => {
                 </form>
             </section>
             <section className="link--register">
-                <Link to="/register">Not a member yet?</Link>
+                <Link to="/register">Not a player member yet?</Link>
             </section>
         </main>
     )
