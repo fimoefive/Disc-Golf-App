@@ -1,6 +1,5 @@
 import React from "react";
 import { Link } from "react-router-dom";
-// import { Logout } from "./Auth/Logout"
 import "./NavBar.css";
 
 export const NavBar = (props) => {
