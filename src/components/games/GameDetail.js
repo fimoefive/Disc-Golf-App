@@ -6,7 +6,7 @@ import "./Game.css";
 
 export const GameDetail = () => {
     const { deleteGame, getGameById } = useContext(GameContext)
-
+    const [scores, setScores] = useState([]);
     const [game, setGame] = useState();
 
     const { gameId } = useParams();
@@ -15,7 +15,6 @@ export const GameDetail = () => {
     const user = parseInt(localStorage.getItem("disc-app_user"))
 
     const [owned, setOwned] = useState(false)
-
 
     useEffect(() => {
 
@@ -27,6 +26,16 @@ export const GameDetail = () => {
                 }
             })
     }, [])
+
+    // useEffect(() => {
+    //     getScoreById(scoreId)
+    //         .then((response) => {
+    //             setScore(response)
+    //             if (user === response.user.id) {
+    //                 setOwned(true)
+    //             }
+    //         })
+    // }, [])
 
     return (
         <section className="game">

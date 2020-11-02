@@ -11,6 +11,10 @@ export const GameProvider = (props) => {
             .then(response => response.json())
             .then(setGames)
     }
+    const getScoreById = (id) => {
+        return fetch(`http://localhost:8088/scores/${id}?_expand=user`)
+            .then(response => response.json())
+    };
 
     const addGame = (x) => {
         return fetch(`http://localhost:8088/games`, {
@@ -46,7 +50,7 @@ export const GameProvider = (props) => {
 
     return (
         <GameContext.Provider value={{
-            games, getGames, editGame, deleteGame, addGame, getGameById, setSearchTerms, searchTerms
+            games, getGames, editGame, deleteGame, addGame, getGameById, setSearchTerms, searchTerms, getScoreById
         }}>
             {props.children}
         </GameContext.Provider>
