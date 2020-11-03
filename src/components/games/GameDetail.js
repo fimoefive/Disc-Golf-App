@@ -21,9 +21,9 @@ export const GameDetail = () => {
         getGameById(gameId)
             .then((response) => {
                 setGame(response)
-                // if (user === response.user.id) {
-                //     setOwned(true)
-                // }
+                if (user === response.user.id) {
+                    setOwned(true)
+                }
             })
     }, [])
 
@@ -31,9 +31,9 @@ export const GameDetail = () => {
         getScoreById(scoreId)
             .then((response) => {
                 setScore(response)
-                if (user === response.user.id) {
-                    setOwned(true)
-                }
+                // if (user === response.user.id) {
+                //     setOwned(true)
+                // }
             })
     }, [])
 
