@@ -17,7 +17,6 @@ export const GameDetail = () => {
     const [owned, setOwned] = useState(false)
 
     useEffect(() => {
-
         getGameById(gameId)
             .then((response) => {
                 setGame(response)
