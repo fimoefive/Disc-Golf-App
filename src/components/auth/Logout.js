@@ -1,7 +1,4 @@
-import React from "react"
 import { useHistory } from 'react-router-dom';
-
-
 import React from 'react'
 
 export const Logout = () => {
@@ -15,6 +12,7 @@ export const Logout = () => {
 
     return (
         <>
+            <div className="logoutTitle">Player Logout</div>
             <button className="logoutBtn" onClick={logout}>Logout</button>
         </>
     )
