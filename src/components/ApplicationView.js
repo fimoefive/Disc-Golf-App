@@ -126,25 +126,25 @@ export const ApplicationViews = (props) => {
             </RankProvider> */}
 
             <MessageProvider>
-                <Route exact path="/chats/create">
+                <Route exact path="/messages/create">
                     <MessageForm />
                 </Route>
             </MessageProvider>
 
             <MessageProvider>
-                <Route exact path="/chats/edit/:chatId(\d+)">
+                <Route exact path="/messages/edit/:chatId(\d+)">
                     <MessageForm />
                 </Route>
             </MessageProvider>
 
             <MessageProvider>
-                <Route exact path="/chats">
+                <Route exact path="/messages">
                     <MessageList />
                 </Route>
             </MessageProvider>
 
             <MessageProvider>
-                <Route exact path="/chats/detail/:chatId(\d+)">
+                <Route exact path="/messages/detail/:chatId(\d+)">
                     <MessageDetail />
                 </Route>
             </MessageProvider>

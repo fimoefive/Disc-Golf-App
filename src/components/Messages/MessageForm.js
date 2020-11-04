@@ -40,14 +40,14 @@ export const MessageForm = () => {
                 userId: parseInt(localStorage.getItem("disc-app_user")),
                 message: chat.messageInput
             })
-                .then(() => history.push("/chats"))
+                .then(() => history.push("/messages"))
         }
         else {
             addMessage({
                 userId: parseInt(localStorage.getItem("disc-app_user")),
                 message: chat.messageInput
             })
-                .then(() => history.push("/chats"))
+                .then(() => history.push("/messages"))
         }
     }
 
@@ -57,7 +57,7 @@ export const MessageForm = () => {
             <fieldset>
                 <div className="form-group">
                     <input type="text" id="message" name="messageInput" title="title" required autoFocus className="form-control"
-                        placeholder="What's on your mind?"
+                        placeholder="Message a friend"
                         onChange={handleControlledInputChange}
                         defaultValue={chat.messageInput} />
                 </div>

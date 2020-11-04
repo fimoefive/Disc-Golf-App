@@ -9,9 +9,9 @@ export const FollowerProvider = (props) => {
     const getFollowers = () => {
         return fetch(`http://localhost:8088/followers?_expand=user`)
             .then(response => response.json())
-            .then(res => {
-                setFollowers(res)
-                return res
+            .then(response => {
+                setFollowers(response)
+                return response
             })
     }
 
@@ -34,7 +34,7 @@ export const FollowerProvider = (props) => {
 
     const getUsers = () => {
         return fetch(`http://localhost:8088/users`)
-            .then(res => res.json())
+            .then(response => response.json())
     }
 
     return (

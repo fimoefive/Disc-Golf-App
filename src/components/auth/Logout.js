@@ -12,7 +12,7 @@ export const Logout = () => {
 
     return (
         <>
-            <div className="logoutTitle">Player Logout</div>
+            <h2 className="logoutTitle">Current Player Logout</h2>
             <button className="logoutBtn" onClick={logout}>Logout</button>
         </>
     )

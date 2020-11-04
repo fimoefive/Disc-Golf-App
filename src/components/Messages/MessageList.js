@@ -25,10 +25,10 @@ export const MessageList = () => {
     return (
         <>
             <h2>Messages</h2>
-            <button onClick={() => { history.push("/chats/create") }}>
+            <button onClick={() => { history.push("/messages/create") }}>
                 Add Message
             </button>
-            <div className="chats">
+            <div className="messages">
                 {
                     filteredMessages.map(chat => {
                         return <MessageCard key={chat.id} chat={chat} />

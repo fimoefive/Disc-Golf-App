@@ -24,13 +24,13 @@ export const MessageDetail = () => {
                 () => {
                     deleteMessage(chat.id)
                         .then(() => {
-                            history.push("/chats")
+                            history.push("/messages")
                         })
                 }
             }>Delete Message</button>
 
             <button onClick={() => {
-                history.push(`/chats/edit/${chat.id}`)
+                history.push(`/messages/edit/${chat.id}`)
             }}>Edit Message</button>
 
         </section>
