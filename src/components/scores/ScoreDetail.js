@@ -5,7 +5,7 @@ import "./Score.css";
 
 
 export const ScoreDetail = () => {
-    const { getScoreById, deleteScore } = useContext(ScoreContext)
+    const { getScoreById, deleteScore, setScoreTotal } = useContext(ScoreContext)
 
     const [score, setScore] = useState();
 
@@ -16,6 +16,10 @@ export const ScoreDetail = () => {
     const user = parseInt(localStorage.getItem("disc-app_user"))
 
     const [owned, setOwned] = useState(false)
+
+    // useEffect(() => {
+    //     setScoreTotal("")
+    // }, [])
 
     useEffect(() => {
         getScoreById(scoreId)
@@ -30,15 +34,33 @@ export const ScoreDetail = () => {
     return (
         <section className="score">
             <h3 className="score__name">{score?.name}</h3>
-            <div className="score__round">Round One: {score?.round}</div>
-            <div className="score__round2">Round Two: {score?.round2}</div>
-            <div className="score__round3">Round Three {score?.round3}</div>
-            <div className="score__round4">Round Four: {score?.round4}</div>
-            <div className="score__round5">Round Five: {score?.round5}</div>
-            <div className="score__round6">Round Six: {score?.round6}</div>
-            <div className="score__round7">Round Seven: {score?.round7}</div>
-            <div className="score__round8">Round Eight: {score?.round8}</div>
-            <div className="score__round9">Round Nine: {score?.round9}</div>
+            <div className="score__round" onKeyUp={
+                (keyEvent) => setScoreTotal(keyEvent.target.value)
+            }>Round One: {score?.round}</div>
+            <div className="score__round2" onKeyUp={
+                (keyEvent) => setScoreTotal(keyEvent.target.value)
+            }>Round Two: {score?.round2}</div>
+            <div className="score__round3" onKeyUp={
+                (keyEvent) => setScoreTotal(keyEvent.target.value)
+            }>Round Three {score?.round3}</div>
+            <div className="score__round4" onKeyUp={
+                (keyEvent) => setScoreTotal(keyEvent.target.value)
+            }>Round Four: {score?.round4}</div>
+            <div className="score__round5" onKeyUp={
+                (keyEvent) => setScoreTotal(keyEvent.target.value)
+            }>Round Five: {score?.round5}</div>
+            <div className="score__round6" onKeyUp={
+                (keyEvent) => setScoreTotal(keyEvent.target.value)
+            }>Round Six: {score?.round6}</div>
+            <div className="score__round7" onKeyUp={
+                (keyEvent) => setScoreTotal(keyEvent.target.value)
+            }>Round Seven: {score?.round7}</div>
+            <div className="score__round8" onKeyUp={
+                (keyEvent) => setScoreTotal(keyEvent.target.value)
+            }>Round Eight: {score?.round8}</div>
+            <div className="score__round9" onKeyUp={
+                (keyEvent) => setScoreTotal(keyEvent.target.value)
+            }>Round Nine: {score?.round9}</div>
             <div className="score__total">Total Score: {score?.total}</div>
             <div className="score__startTime">Start Time: {score?.startTime}</div>
             <div className="score__endTime">End Time: {score?.endTime}</div>
