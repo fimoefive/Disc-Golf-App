@@ -2,13 +2,16 @@ import React, { useContext, useEffect, useState } from "react";
 import { useHistory, useParams } from "react-router-dom";
 import { GameContext } from "../Games/GameProvider";
 import { CourseContext } from "../Courses/CourseProvider";
+import { ScoreContext } from "../Scores/ScoreProvider";
 
 export const GameForm = (props) => {
     const { getGames, getGameById, editGame, addGame } = useContext(GameContext)
+    const { scores, getScores } = useContext(ScoreContext)
     const { courses, getCourses } = useContext(CourseContext);
     const [game, setGame] = useState({})
     const [isLoading, setIsLoading] = useState(true)
     const { gameId } = useParams()
+    const { scoreId } = useParams();
     const history = useHistory()
 
     const handleControlledInputChange = (event) => {
@@ -30,7 +33,20 @@ export const GameForm = (props) => {
                 setIsLoading(false)
             }
         })
-    }, [])
+    }, []);
+
+    // useEffect(() => {
+    //     getScores().then(() => {
+    //         if (editMode) {
+    //             getGameById(gameId).then(game => {
+    //                 setGame(game);
+    //                 setIsLoading(false);
+    //             });
+    //         } else {
+    //             setIsLoading(false);
+    //         }
+    //     })
+    // }, []);
 
 
     useEffect(() => {
@@ -56,7 +72,7 @@ export const GameForm = (props) => {
                 editGame({
                     id: game.id,
                     title: game.title,
-                    score: game.score,
+                    scoreId: parseInt(game.scoreId),
                     courseId: parseInt(game.courseId),
                     userId: parseInt(game.userId),
                     date: new Date()
@@ -66,7 +82,7 @@ export const GameForm = (props) => {
             else {
                 addGame({
                     title: game.title,
-                    score: game.score,
+                    scoreId: parseInt(game.scoreId),
                     courseId: parseInt(game.courseId),
                     userId: parseInt(localStorage.getItem("disc-app_user")),
                     date: new Date()
@@ -91,10 +107,12 @@ export const GameForm = (props) => {
             <fieldset>
                 <div className="from-group">
                     <label htmlFor="gameScore">Score Total</label>
-                    <input type="text" id="gameScore" title="score" required autoFocus className="from-control"
+                    <label value={game.scoreId} id="gameScore" title="scoreId" required autoFocus className="from-control"
                         placeholder="Score"
                         onChange={handleControlledInputChange}
-                        defaultValue={game.score} />
+                        defaultValue={game.scoreId}>
+                    </label>
+                    {/* element label change */}
                 </div>
             </fieldset>
             <fieldset>

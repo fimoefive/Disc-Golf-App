@@ -42,7 +42,7 @@ export const ScoreDetail = () => {
             }>Round Two: {score?.round2}</div>
             <div className="score__round3" onKeyUp={
                 (keyEvent) => setScoreTotal(keyEvent.target.value)
-            }>Round Three {score?.round3}</div>
+            }>Round Three: {score?.round3}</div>
             <div className="score__round4" onKeyUp={
                 (keyEvent) => setScoreTotal(keyEvent.target.value)
             }>Round Four: {score?.round4}</div>

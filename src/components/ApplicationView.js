@@ -28,7 +28,6 @@ import { MessageForm } from "./Messages/MessageForm";
 import { MessageList } from "./Messages/MessageList";
 import { MessageDetail } from "./Messages/MessageDetail";
 
-
 import { FollowerList } from "./Followers/FollowerList";
 import { FollowerProvider } from "./Followers/FollowerProvider";
 import { FollowerForm } from "./Followers/FollowerForm";
@@ -149,11 +148,9 @@ export const ApplicationViews = (props) => {
                 </Route>
             </MessageProvider>
 
-            <Logout>
-                <Route exact path="/logout">
-                    <Logout />
-                </Route>
-            </Logout>
+            <Route exact path="/logout">
+                <Logout />
+            </Route>
         </>
     )
 };
