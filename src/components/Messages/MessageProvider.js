@@ -17,13 +17,13 @@ export const MessageProvider = (props) => {
             .then(res => res.json())
     }
 
-    const addMessage = (chat) => {
+    const addMessage = (chatObj) => {
         return fetch("http://localhost:8088/messages", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
             },
-            body: JSON.stringify(chat)
+            body: JSON.stringify(chatObj)
         })
             .then(getMessages)
     }

@@ -12,13 +12,13 @@ export const ScoreProvider = (props) => {
             .then(setScores)
     };
 
-    const addScore = (event) => {
+    const addScore = (scoreObj) => {
         return fetch('http://localhost:8088/scores', {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
             },
-            body: JSON.stringify(event)
+            body: JSON.stringify(scoreObj)
         })
             .then(getScores)
     };

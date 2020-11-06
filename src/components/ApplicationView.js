@@ -36,7 +36,7 @@ export const ApplicationViews = (props) => {
     return (
         <>
             <FollowerProvider>
-                <Route exact path="/">in
+                <Route exact path="/">
                     <Home />
                     <FollowerList />
                 </Route>
@@ -74,10 +74,12 @@ export const ApplicationViews = (props) => {
             </ScoreProvider>
 
             <GameProvider>
-                <Route exact path="/games">
-                    <GameSearch />
-                    <GamesList />
-                </Route>
+                <ScoreProvider>
+                    <Route exact path="/games">
+                        <GameSearch />
+                        <GamesList />
+                    </Route>
+                </ScoreProvider>
             </GameProvider>
 
             <GameProvider>

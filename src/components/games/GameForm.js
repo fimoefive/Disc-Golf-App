@@ -97,7 +97,7 @@ export const GameForm = (props) => {
             <h2 className="gameForm_title">{gameId ? "Edit Game" : "Create Game"}</h2>
             <fieldset>
                 <div className="from-group">
-                    <label htmlFor="gameTitle">Game Title</label>
+                    <label htmlFor="gameTitle">Game Title: </label>
                     <input type="text" id="gameTitle" title="title" required autoFocus className="from-control"
                         placeholder="Title"
                         onChange={handleControlledInputChange}
@@ -106,7 +106,7 @@ export const GameForm = (props) => {
             </fieldset>
             <fieldset>
                 <div className="from-group">
-                    <label htmlFor="gameScore">Score Total</label>
+                    <label htmlFor="gameScore">Score Total: </label>
                     <label value={game.scoreId} id="gameScore" title="scoreId" required autoFocus className="from-control"
                         placeholder="Score"
                         onChange={handleControlledInputChange}

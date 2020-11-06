@@ -1,11 +1,13 @@
 import React, { useContext, useEffect, useState } from "react";
 import { useHistory } from "react-router-dom";
 import { GameContext } from "./GameProvider";
+import { ScoreContext } from "../Scores/ScoreProvider";
 import { GameCard } from "./GameCard";
 import "./Game.css";
 
 export const GamesList = () => {
     const { games, getGames, searchTerms } = useContext(GameContext)
+    const { scores, getScores } = useContext(ScoreContext)
     const [filteredGames, setFilteredGames] = useState([])
 
     useEffect(() => {

@@ -57,7 +57,7 @@ export const MessageForm = () => {
             <fieldset>
                 <div className="form-group">
                     <input type="text" id="message" name="messageInput" title="title" required autoFocus className="form-control"
-                        placeholder="Message a friend"
+                        placeholder="Message a player"
                         onChange={handleControlledInputChange}
                         defaultValue={chat.messageInput} />
                 </div>

@@ -24,13 +24,13 @@ export const GameProvider = (props) => {
             .then(response => response.json())
     };
 
-    const addGame = (x) => {
+    const addGame = (gameObj) => {
         return fetch(`http://localhost:8088/games`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
             },
-            body: JSON.stringify(x)
+            body: JSON.stringify(gameObj)
         })
             .then(getGames)
     }
