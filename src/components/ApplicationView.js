@@ -36,7 +36,7 @@ export const ApplicationViews = (props) => {
     return (
         <>
             <FollowerProvider>
-                <Route exact path="/">
+                <Route exact path="/">in
                     <Home />
                     <FollowerList />
                 </Route>
@@ -81,48 +81,58 @@ export const ApplicationViews = (props) => {
             </GameProvider>
 
             <GameProvider>
-                <Route exact path="/games/detail/:gameId(\d+)">
-                    <GameDetail />
-                </Route>
+                <ScoreProvider>
+                    <Route exact path="/games/detail/:gameId(\d+)">
+                        <GameDetail />
+                    </Route>
+                </ScoreProvider>
             </GameProvider>
 
             <GameProvider>
-                <CourseProvider>
-                    <Route exact path="/games/create"
-                        render={(props) => <GameForm {...props} />}>
-                    </Route>
-                </CourseProvider>
+                <ScoreProvider>
+                    <CourseProvider>
+                        <Route exact path="/games/create"
+                            render={(props) => <GameForm {...props} />}>
+                        </Route>
+                    </CourseProvider>
+                </ScoreProvider>
             </GameProvider>
 
             <GameProvider>
-                <CourseProvider>
-                    <Route exact path="/games/edit/:gameId(\d+)"
-                        render={(props) => <GameForm {...props} />}>
-
-                    </Route>
-                </CourseProvider>
+                <ScoreProvider>
+                    <CourseProvider>
+                        <Route exact path="/games/edit/:gameId(\d+)"
+                            render={(props) => <GameForm {...props} />}>
+                        </Route>
+                    </CourseProvider>
+                </ScoreProvider>
             </GameProvider>
 
             <RankProvider>
-                <Route exact path="/ranks">
-                    <RankSearch />
-                    <RankList />
-
-                </Route>
+                <GameProvider>
+                    <Route exact path="/ranks">
+                        <RankSearch />
+                        <RankList />
+                    </Route>
+                </GameProvider>
             </RankProvider>
 
-            {/* <RankProvider>
+            <RankProvider>
+                <GameProvider>
+                    <Route exact path="/ranks/create"
+                        render={(props) => <RankForm {...props} />}>
+                    </Route>
+                </GameProvider>
+            </RankProvider>
 
-                <Route exact path="/ranks/create"
-                    render={(props) => <RankForm {...props} />}>
-                </Route>
-            </RankProvider> */}
-
-            {/* <RankProvider>
-                <Route exact path="/ranks/detail/:gameId(\d+)">
-                    <RankDetail />
-                </Route>
-            </RankProvider> */}
+            <RankProvider>
+                <GameProvider>
+                    <Route exact path="/ranks/detail/:gameId(\d+)">
+                        <RankDetail />
+                        <GameDetail />
+                    </Route>
+                </GameProvider>
+            </RankProvider>
 
             <MessageProvider>
                 <Route exact path="/messages/create">
