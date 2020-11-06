@@ -14,6 +14,10 @@ export const GamesList = () => {
         getGames()
     }, [])
 
+    useEffect(() => {
+        getScores()
+    }, [])
+
     const history = useHistory()
 
     useEffect(() => {
@@ -34,7 +38,7 @@ export const GamesList = () => {
             <div className="games">
                 {
                     filteredGames.map(game => {
-                        return <GameCard key={game.id} games={game} />
+                        return <GameCard key={game.id} score={scores.total} games={game} />
                     })
                 }
             </div>
