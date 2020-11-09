@@ -14,6 +14,7 @@ export const Logout = () => {
         <>
             <h2 className="logoutTitle">Current Player Logout</h2>
             <Button color="blue" className="btn-primary" onClick={logout}>Logout</Button>
+            <br></br>
         </>
     )
 };

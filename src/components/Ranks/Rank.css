@@ -5,6 +5,8 @@
 }
 
 .ranks {
+  /* flex-wrap: wrap;
+  display: flex; */
   flex-basis: 28%;
   margin: 1em;
   padding: 1em;
