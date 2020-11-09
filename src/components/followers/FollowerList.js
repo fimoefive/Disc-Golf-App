@@ -3,6 +3,7 @@ import { useHistory } from "react-router-dom";
 import { FollowerContext } from "./FollowerProvider";
 import { FollowerCard } from "./FollowerCard";
 import "./Follower.css";
+import { Button } from 'reactstrap';
 
 export const FollowerList = () => {
     const { getFollowers, followers } = useContext(FollowerContext)
@@ -11,17 +12,17 @@ export const FollowerList = () => {
 
     useEffect(() => {
         getFollowers().then(res => {
-            const x = res.filter(user => user.activeUserId === parseInt(localStorage.getItem("disc-app_user")))
-            setFollowers(x)
+            const fObj = res.filter(user => user.activeUserId === parseInt(localStorage.getItem("disc-app_user")))
+            setFollowers(fObj)
         })
     }, [])
 
     return (
         <>
             <h2>Followers List</h2>
-            <button className="add_follower" onClick={() => {
+            <Button color="blue" className="btn-primary" onClick={() => {
                 history.push("/followers/create")
-            }}>Add Follower</button>
+            }}>Add Follower</Button>
             <div className="followers">
                 {
                     followerList.map(follower => {

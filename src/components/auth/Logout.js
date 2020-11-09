@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+import { Button } from 'reactstrap';
 
 export const Logout = () => {
 
@@ -12,7 +13,7 @@ export const Logout = () => {
     return (
         <>
             <h2 className="logoutTitle">Current Player Logout</h2>
-            <button className="logoutBtn" onClick={logout}>Logout</button>
+            <Button color="blue" className="btn-primary" onClick={logout}>Logout</Button>
         </>
     )
 };

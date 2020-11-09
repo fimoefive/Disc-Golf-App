@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from "react";
 import { useParams, useHistory } from "react-router-dom";
 import { MessageContext } from "./MessageProvider";
 import "./Message.css"
+import { Button } from 'reactstrap';
 
 export const MessageDetail = () => {
     const { getMessageById, deleteMessage } = useContext(MessageContext)
@@ -34,7 +35,7 @@ export const MessageDetail = () => {
         <section className="chat">
             <h3 className="chat__message">{chat.message}</h3>
             <div className="chat__username">Posted By: {chat?.user?.username}</div>
-            <button
+            <Button color="blue" className="btn-primary"
                 hidden={!owned}
                 onClick={
                     () => {
@@ -43,12 +44,13 @@ export const MessageDetail = () => {
                                 history.push("/messages")
                             })
                     }
-                }>Delete Message</button>
+                }>Delete Message</Button>
 
-            <button hidden={!owned}
+            <Button color="blue" className="btn-primary"
+                hidden={!owned}
                 onClick={() => {
                     history.push(`/messages/edit/${chat.id}`)
-                }}>Edit Message</button>
+                }}>Edit Message</Button>
 
         </section>
     )

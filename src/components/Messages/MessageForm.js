@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from "react";
 import { useHistory, useParams } from 'react-router-dom';
 import { MessageContext } from "./MessageProvider";
 import "./Message.css";
+import { Button } from 'reactstrap';
 
 export const MessageForm = () => {
     const { getMessages, getMessageById, editMessage, addMessage } = useContext(MessageContext)
@@ -62,12 +63,12 @@ export const MessageForm = () => {
                         defaultValue={chat.messageInput} />
                 </div>
             </fieldset>
-            <button className="btn btn-primary"
+            <Button color="blue" className="btn btn-primary"
                 disabled={isLoading}
                 onClick={event => {
                     event.preventDefault()
                     constructMessageObject()
-                }}>Submit Message</button>
+                }}>Submit Message</Button>
         </form>
     )
 };

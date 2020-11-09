@@ -15,19 +15,19 @@ export const FollowerProvider = (props) => {
             })
     }
 
-    const addFollower = (x) => {
+    const addFollower = (fObj) => {
         return fetch(`http://localhost:8088/followers`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
             },
-            body: JSON.stringify(x)
+            body: JSON.stringify(fObj)
         })
             .then(getFollowers)
     }
 
-    const deleteFollower = (x) => {
-        return fetch(`http://localhost:8088/followers/${x}`, {
+    const deleteFollower = (fObj) => {
+        return fetch(`http://localhost:8088/followers/${fObj}`, {
             method: "DELETE"
         })
     }

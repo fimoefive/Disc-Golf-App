@@ -4,6 +4,7 @@ import { GameContext } from "./GameProvider";
 import { ScoreContext } from "../Scores/ScoreProvider";
 import { GameCard } from "./GameCard";
 import "./Game.css";
+import { Button } from 'reactstrap';
 
 export const GamesList = () => {
     const { games, getGames, searchTerms } = useContext(GameContext)
@@ -32,9 +33,10 @@ export const GamesList = () => {
     return (
         <>
             <h2>Games</h2>
-            <button onClick={() => { history.push("/games/create") }}>
+            <Button color="blue" className="btn-primary"
+                onClick={() => { history.push("/games/create") }}>
                 Create Game
-            </button>
+            </Button>
             <div className="games">
                 {
                     filteredGames.map(game => {

@@ -2,6 +2,8 @@ import React, { useContext, useEffect, useState } from "react";
 import { useParams, useHistory } from "react-router-dom";
 import { GameContext } from "./GameProvider";
 import "./Game.css";
+import { Button } from 'reactstrap';
+
 
 
 export const GameDetail = () => {
@@ -43,7 +45,7 @@ export const GameDetail = () => {
             <div className="game__course">Course: {game?.course.name}</div>
             <div className="game__date">Posted on: {game?.date.split("T")[0]}</div>
             <div className="game__user">Posted by: {game?.user?.username}</div>
-            <button
+            <Button color="blue" className="btn-primary"
                 hidden={!owned}
                 onClick={
                     () => {
@@ -52,12 +54,12 @@ export const GameDetail = () => {
                                 history.push("/games")
                             })
                     }}>Delete Game
-			</button>
-            <button
+			</Button>
+            <Button color="blue" className="btn-primary"
                 hidden={!owned}
                 onClick={() => {
                     history.push(`/games/edit/${game.id}`)
-                }}>Edit</button>
+                }}>Edit</Button>
         </section>
     )
 };

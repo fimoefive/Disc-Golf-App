@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from "react";
 import { useHistory, useParams } from "react-router-dom";
 import { ScoreContext } from "./ScoreProvider";
 import "./Score.css";
+import { Button } from 'reactstrap';
 
 
 export const ScoreForm = (props) => {
@@ -231,14 +232,14 @@ export const ScoreForm = (props) => {
                         defaultValue={score.date} />
                 </div>
             </fieldset>
-            <button type="submit"
-                className="btn btn-primary"
+            <Button type="submit" color="blue"
+                className="btn-primary"
                 disabled={isLoading}
                 onClick={e => {
                     e.preventDefault()
                     constructScoreCardObject()
                 }}>
-                {scoreId ? "Save Score" : "Create Score"}</button>
+                {scoreId ? "Save Score" : "Create Score"}</Button>
         </form>
     )
 };

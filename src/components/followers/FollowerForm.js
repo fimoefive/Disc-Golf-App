@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useRef, useState } from "react";
 import { useHistory } from "react-router-dom";
 import { FollowerContext } from "./FollowerProvider";
+import { Button } from 'reactstrap';
 
 export const FollowerForm = () => {
     const { getFollowers, addFollower, getUsers } = useContext(FollowerContext)
@@ -64,12 +65,12 @@ export const FollowerForm = () => {
                         onChange={handleControlledInputChange} />
                 </div>
             </fieldset>
-            <button className="btn btn-primary"
+            <Button color="blue" className="btn-primary"
                 disabled={isLoading}
                 onClick={event => {
                     event.preventDefault()
                     constructFollowerObject()
-                }}>Save Follower</button>
+                }}>Save Follower</Button>
         </form>
     )
 };

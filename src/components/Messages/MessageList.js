@@ -3,6 +3,7 @@ import { useHistory } from "react-router-dom";
 import { MessageContext } from "./MessageProvider";
 import { MessageCard } from "./MessageCard";
 import "./Message.css";
+import { Button } from 'reactstrap';
 
 export const MessageList = () => {
     const { messages, getMessages, searchTerms } = useContext(MessageContext)
@@ -25,9 +26,10 @@ export const MessageList = () => {
     return (
         <>
             <h2>Messages</h2>
-            <button onClick={() => { history.push("/messages/create") }}>
+            <Button color="blue" className="btn-primary"
+                onClick={() => { history.push("/messages/create") }}>
                 Add Message
-            </button>
+            </Button>
             <div className="messages">
                 {
                     filteredMessages.map(chat => {

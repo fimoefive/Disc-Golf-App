@@ -3,6 +3,7 @@ import { useHistory, useParams } from "react-router-dom";
 import { GameContext } from "../Games/GameProvider";
 import { CourseContext } from "../Courses/CourseProvider";
 import { ScoreContext } from "../Scores/ScoreProvider";
+import { Button } from 'reactstrap';
 
 export const GameForm = (props) => {
     const { getGames, getGameById, editGame, addGame } = useContext(GameContext)
@@ -134,13 +135,13 @@ export const GameForm = (props) => {
                     </select>
                 </div>
             </fieldset>
-            <button className="btn btn-primary"
+            <Button color="blue" className="btn btn-primary"
                 disabled={isLoading}
                 onClick={event => {
                     event.preventDefault()
                     constructGameObject()
                 }}>
-                {gameId ? "Save Game" : "Create Game"}</button>
+                {gameId ? "Save Game" : "Create Game"}</Button>
         </form>
     )
 };

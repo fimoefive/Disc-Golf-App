@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from "react";
 import { useParams, useHistory } from "react-router-dom";
 import { ScoreContext } from "./ScoreProvider";
 import "./Score.css";
+import { Button } from 'reactstrap';
 
 
 export const ScoreDetail = () => {
@@ -67,19 +68,21 @@ export const ScoreDetail = () => {
             <div className="score__date">Posted on: {score?.date}</div>
             <div className="score__user">Posted by: {score?.user.username}</div>
 
-            <button hidden={!owned}
+            <Button color="blue" className="btn-primary"
+                hidden={!owned}
                 onClick={() => {
                     deleteScore(score.id)
                         .then(() => {
                             history.push("/scores")
                         })
                 }}>Delete Score
-            </button>
+            </Button>
 
-            <button hidden={!owned}
+            <Button color="blue" className="btn-primary"
+                hidden={!owned}
                 onClick={() => {
                     history.push(`/scores/edit/${score.id}`)
-                }}>Edit</button>
+                }}>Edit</Button>
         </section>
     )
 };

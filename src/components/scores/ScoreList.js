@@ -3,6 +3,7 @@ import { useHistory } from "react-router-dom";
 import { ScoreContext } from "./ScoreProvider";
 import { ScoreCard } from "./ScoreCard";
 import "./Score.css";
+import { Button } from 'reactstrap';
 
 export const ScoreList = () => {
 
@@ -27,9 +28,11 @@ export const ScoreList = () => {
     return (
         <>
             <h2>ScoreCard</h2>
-            <button onClick={() => { history.push("/scores/create") }}>
+            <Button color="blue"
+                className="btn-primary"
+                onClick={() => { history.push("/scores/create") }}>
                 Create Score
-            </button>
+            </Button>
             <div className="score">
                 {
                     filteredScores.map(score => {
