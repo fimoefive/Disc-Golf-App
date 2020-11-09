@@ -1,9 +1,11 @@
-.rank {
+/* .rank {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+} */
+.ranks {
+  flex: wrap;
 }
-
 /* .ranks {
   flex-basis: 28%;
   margin: 1em;

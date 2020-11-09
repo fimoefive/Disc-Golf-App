@@ -10,9 +10,10 @@ export const RankCard = ({ games }) => (
         <div className="game_score">Total Score: {games.score}</div>
         <div className="game_score">games.id: {games.id}</div>
         <div className="game__user">games.user.id: {games.user.id}</div> */}
-        <Table border="1">
-            <tr><td>Player</td><td>Average Score</td></tr>
-            <tr><td>{games.user.username}</td><td>{games.score}</td></tr>
+        <Table striped border="4">
+            <thead scope="row"><td>Player</td><td>Average Score</td></thead>
+            <tr></tr>
+            <thead scope="row"><td>{games.user.username}</td><td>{games.score}</td></thead>
         </Table>
     </section>
 );
