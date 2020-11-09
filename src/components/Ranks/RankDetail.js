@@ -29,7 +29,7 @@ export const RankDetail = () => {
     }, [])
 
     return (
-        <section className="game">
+        <section className="rank">
             <h3 className="game__name">{game?.title}</h3>
             <div className="game__score">{game?.score}</div>
             <div className="game__course">{game?.course.name}</div>

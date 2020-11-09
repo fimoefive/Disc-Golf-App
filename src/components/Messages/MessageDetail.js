@@ -35,7 +35,7 @@ export const MessageDetail = () => {
         <section className="chat">
             <h3 className="chat__message">{chat.message}</h3>
             <div className="chat__username">Posted By: {chat?.user?.username}</div>
-            <Button color="blue" className="btn-primary"
+            <Button color="blue" className="btn btn-primary"
                 hidden={!owned}
                 onClick={
                     () => {
@@ -46,7 +46,7 @@ export const MessageDetail = () => {
                     }
                 }>Delete Message</Button>
 
-            <Button color="blue" className="btn-primary"
+            <Button color="blue" className="btn btn-primary"
                 hidden={!owned}
                 onClick={() => {
                     history.push(`/messages/edit/${chat.id}`)

@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "./Message.css";
+import { Button } from 'reactstrap';
 
 export const MessageCard = ({ chat }) => (
     <section className="messageLog">
