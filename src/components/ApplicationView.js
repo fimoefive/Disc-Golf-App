@@ -3,6 +3,7 @@ import { Route } from "react-router-dom";
 import { Home } from "./Home";
 import { Logout } from "./Auth/Logout";
 
+
 import { ScoreForm } from "./Scores/ScoreForm";
 import { ScoreList } from "./Scores/ScoreList";
 import { ScoreDetail } from "./Scores/ScoreDetail";
@@ -162,6 +163,7 @@ export const ApplicationViews = (props) => {
 
             <Route exact path="/logout">
                 <Logout />
+                <discBasket />
             </Route>
         </>
     )
