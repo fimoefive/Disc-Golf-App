@@ -24,6 +24,11 @@
       "id": 5,
       "email": "martin@me.com",
       "username": "Martin"
+    },
+    {
+      "email": "Jacob@email.com",
+      "username": "Jacob",
+      "id": 6
     }
   ],
   "scores": [
@@ -164,6 +169,11 @@
       "userId": 1,
       "activeUserId": 4,
       "id": 11
+    },
+    {
+      "userId": 5,
+      "activeUserId": 6,
+      "id": 12
     }
   ],
   "messages": [
