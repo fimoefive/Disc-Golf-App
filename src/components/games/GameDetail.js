@@ -40,7 +40,7 @@ export const GameDetail = () => {
 
     return (
         <section className="game">
-            <h3 className="game__name">{game?.title}</h3>
+            <h3 className="game__name">Title: {game?.title}</h3>
             <div className="game__score">Total: {game?.score?.total}</div>
             <div className="game__course">Course: {game?.course.name}</div>
             <div className="game__date">Posted on: {game?.date.split("T")[0]}</div>

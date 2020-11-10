@@ -12,13 +12,13 @@ export const GameSearch = () => {
 
     return (
         <>
-            Game search:
+            Game Search:
             <input type="text"
                 className="input--wide"
                 onKeyUp={
                     (keyEvent) => setSearchTerms(keyEvent.target.value)
                 }
-                placeholder="Search for a game.. " />
+                placeholder="Search for a game... " />
         </>
     )
 };

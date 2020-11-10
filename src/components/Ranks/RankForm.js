@@ -99,7 +99,7 @@ export const RankForm = (props) => {
             </fieldset>
             <fieldset>
                 <div className="form-group">
-                    <label htmlFor="course">Choose Course: </label>
+                    <label htmlFor="course">Choose Course:</label>
                     <select
                         value={game.courseId}
                         title="courseId"

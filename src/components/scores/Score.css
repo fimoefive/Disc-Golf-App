@@ -5,7 +5,8 @@
 }
 
 .scores {
-  flex-basis: 28%;
+  /* display: flex; */
+  flex: wrap;
   margin: 1em;
   padding: 1em;
   border: 1px solid blue;

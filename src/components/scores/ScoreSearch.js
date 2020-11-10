@@ -17,7 +17,7 @@ export const ScoreSearch = () => {
                 onKeyUp={
                     (keyEvent) => setSearchTerms(keyEvent.target.value)
                 }
-                placeholder="Search for a score... " />
+                placeholder="Search for scorecard... " />
         </>
     )
 };

@@ -1,3 +1,4 @@
+
 import React, { useContext, useEffect, useState } from "react";
 import { useHistory, useParams } from "react-router-dom";
 import { GameContext } from "../Games/GameProvider";
@@ -113,7 +114,7 @@ export const GameForm = (props) => {
                         onChange={handleControlledInputChange}
                         defaultValue={game.scoreId}>
                     </label>
-                    {/* element label change */}
+
                 </div>
             </fieldset>
             <fieldset>
@@ -144,4 +145,4 @@ export const GameForm = (props) => {
                 {gameId ? "Save Game" : "Create Game"}</Button>
         </form>
     )
-};
+}
