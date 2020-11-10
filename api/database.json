@@ -170,12 +170,12 @@
     {
       "id": 1,
       "userId": 1,
-      "message": "Hello!"
+      "message": "I'll be playing the White House course this weekend!"
     },
     {
       "id": 2,
       "userId": 4,
-      "message": "OKAY"
+      "message": "Who would like to play today?"
     },
     {
       "id": 3,
@@ -184,7 +184,7 @@
     },
     {
       "userId": 5,
-      "message": "What time is it?",
+      "message": "What time is the tournament?",
       "id": 4
     }
   ],

@@ -1,12 +1,14 @@
-.games {
-  display: flex;
+.game {
   flex-wrap: wrap;
   justify-content: space-between;
+  border: 1px solid blue;
 }
 
 .games {
   flex-basis: 28%;
   margin: 1em;
   padding: 1em;
-  border: 1px solid goldenrod;
+  justify-content: space-between;
+  border: 1px solid blue;
+  font-style: normal;
 }
