@@ -1,14 +1,21 @@
 .score {
   flex-wrap: wrap;
   justify-content: space-between;
-  border: 1px solid blue;
-}
-
-.scores {
-  /* display: flex; */
-  flex-basis: 18%;
-  /* flex: wrap; */
   margin: 1em;
   padding: 1em;
   border: 1px solid blue;
+  box-sizing: border-box;
+}
+
+.scores {
+  flex-wrap: wrap;
+  /* flex-basis: 15%; */
+  justify-content: space-between;
+  box-sizing: border-box;
+  margin: 1em;
+  padding: 1em;
+  /* border: 1px solid blue; */
+  width: 15%;
+  border: 5px solid red;
+  float: left;
 }
